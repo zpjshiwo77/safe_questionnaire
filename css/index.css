@@ -1,4 +1,5 @@
 /* ---------------------------------------- 默认css针对16:9标准比例屏幕微信----------------------------------------*/
+@font-face { font-family: zkwyt; src: url('../css/zkwyt.ttf');}
 html,body,article{
 	position: fixed;
 	padding: 0;
@@ -7,6 +8,10 @@ html,body,article{
     width: 100%;
 	overflow: hidden;
 	-webkit-text-size-adjust:100%!important;
+	background-color: #d4474e;
+}
+*{
+	font-family: zkwyt;
 }
 .none{
 	display: none;
@@ -38,21 +43,135 @@ aside{
     z-index: 19;
     background-color: rgba(0,0,0,0.85);
 }
+.full{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 img{
 	/* pointer-events: none; */
+}
+.coverMask{
+	z-index: 9;
+	mix-blend-mode: overlay;
+	pointer-events: none;
+}
+.fontLoad{
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-family: FZfont;
 }
 /* public end */
 
 .lighting{
 	-webkit-animation: lighting 3s ease infinite;
 }
+.lighting2{
+	-webkit-animation: lighting 1.6s ease infinite;
+}
 @-webkit-keyframes lighting{
-	0%{opacity: 0.3;}
+	0%{opacity: 0.1;}
 	50%{opacity: 1;}
-	100%{opacity: 0.3;}
+	100%{opacity: 0.1;}
+}
+
+.rolling{
+	-webkit-animation: rolling 2s ease infinite;
+}
+@-webkit-keyframes rolling{
+	0%{opacity: 0;transform: translate(0,0) rotate(0);}
+	30%{opacity: 1;}
+	70%{opacity: 1;}
+	100%{opacity: 0;transform: translate(0.5rem,0) rotate(360deg);}
+}
+
+.moving{
+	-webkit-animation: moving 2.5s linear infinite;
+}
+@-webkit-keyframes moving{
+	0%{transform: translate(0,0);}
+	100%{transform: translate(1.04rem,0);}
 }
 /* anime end */
 
+#loadingBox{
+	background: url(../images/loadingBox/bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#loadingBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 7.5rem;
+	height: 7rem;
+	margin-top: -4.87rem;
+}
+#loadingBox .cont .award{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 5.94rem;
+	height: 6.56rem;
+	margin-left: -2.97rem;
+}
+#loadingBox .cont .award .num{
+	position: absolute;
+	top: 3.9rem;
+	left: -0.08rem;
+	width: 100%;
+	color: #f5d7ae;
+	text-align: center;
+	font-size: 0.9rem;
+}
+#loadingBox .cont .peopleBox{
+	position: absolute;
+	top: 5.9rem;
+	left: 50%;
+	width: 3.75rem;
+	height: 0.98rem;
+	margin-left: -1.875rem;
+	transform: translate(2rem, 0);
+}
+#loadingBox .cont .peopleBox .people{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0.46rem;
+}
+#loadingBox .cont .peopleBox .coin{
+	position: absolute;
+	bottom: 0;
+	left: 0.5rem;
+	width: 0.29rem;
+}
+#loadingBox .cont .barBox{
+	position: absolute;
+	top: 6.9rem;
+	left: 50%;
+	width: 3.75rem;
+	height: 0.22rem;
+	margin-left: -1.875rem;
+	-webkit-mask: url(../images/loadingBox/mask.png);
+	-webkit-mask-size: 100% 100%;
+}
+#loadingBox .cont .bar{
+	position: absolute;
+	top: 0;
+	left: -1.04rem;
+	height: 0.22rem;
+}
+#loadingBox .cont .word{
+	position: absolute;
+	top: 7.3rem;
+	left: 50%;
+	width: 0.85rem;
+	margin-left: -0.425rem;
+}
+/* loadingBox end */
 /*---------------------------------------- 15:9 ----------------------*/
 
 /*---------------------------------------- 18:9 ----------------------*/

@@ -9,7 +9,6 @@
 //})();
 
 var imonitor = importMonitor();
-imonitor.add({action:'loading',category:'default',label:'loading'});
 function importMonitor() {
 	var monitor = {};
 
