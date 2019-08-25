@@ -75,7 +75,9 @@ $(document).ready(function () {
 	}//edn func
 
 	//------------------------------页面逻辑代码-----------------------
+	var roadBox = $("#roadBox");
 
+	var iroadSence;
 
 	/**
 	 * 页面初始化
@@ -83,6 +85,7 @@ $(document).ready(function () {
 	function pageInit() {
 		if (loadingFlag && coinAnimeFlag) {
 			icom.fadeOut(loadingBox);
+			roadSenceInit();
 			eventInit();
 			// DevelopTest();
 			monitor_handler();
@@ -102,6 +105,23 @@ $(document).ready(function () {
 	 */
 	function eventInit() {
 		$(".limitBtn").on("touchend", limitClick);
+	}
+
+	/**
+	 * 场景初始化
+	 */
+	function roadSenceInit(){
+		roadBox.show();
+		iroadSence = new roadSence();
+
+		var num = 1;
+		articleBox.on("touchend",function(){
+			if(!iroadSence.animeFlag){
+				var a = iroadSence["sence3step"+num];
+				a();
+				num++;
+			}
+		})
 	}
 
 	/**
