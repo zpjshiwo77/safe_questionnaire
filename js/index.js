@@ -87,7 +87,7 @@ $(document).ready(function () {
 			icom.fadeOut(loadingBox);
 			roadSenceInit();
 			eventInit();
-			// DevelopTest();
+			DevelopTest();
 			monitor_handler();
 		}
 	}//end func
@@ -96,8 +96,37 @@ $(document).ready(function () {
 	 * 开发测试使用
 	 */
 	function DevelopTest() {
-		loadingBox.hide();
-		QABox.show();
+		// loadingBox.hide();
+		// QABox.show();
+
+		senceAnimeTest();
+	}
+
+	/**
+	 * 场景动画测试用
+	 */
+	function senceAnimeTest(){
+		var num = 1;
+		var sence = 1;
+		articleBox.on("touchend",function(){
+			if(!iroadSence.animeFlag){
+				var a = iroadSence["sence"+sence+"step"+num];
+				a();
+				num++;
+				if(num > 10 && sence == 1){
+					num = 1;
+					sence = 2;
+				}
+				else if(num > 8 && sence == 2){
+					num = 1;
+					sence = 3;
+				}
+				else if(num > 6 && sence == 3){
+					num = 1;
+					sence = 4;
+				}
+			}
+		})
 	}
 
 	/**
@@ -113,15 +142,6 @@ $(document).ready(function () {
 	function roadSenceInit(){
 		roadBox.show();
 		iroadSence = new roadSence();
-
-		var num = 1;
-		articleBox.on("touchend",function(){
-			if(!iroadSence.animeFlag){
-				var a = iroadSence["sence3step"+num];
-				a();
-				num++;
-			}
-		})
 	}
 
 	/**

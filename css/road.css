@@ -1,45 +1,62 @@
-#roadBox .bg1{
+#roadBox .bg1 {
     background-color: #03c2b2;
 }
-#roadBox .bg2{
+
+#roadBox .bg2 {
     background: -webkit-linear-gradient(#3c94cf, #03c2b2);
 }
-#roadBox .bg3{
+
+#roadBox .bg3 {
     background-color: #3c94cf;
 }
-#roadBox .bg4{
+
+#roadBox .bg4 {
     background: -webkit-linear-gradient(#4d58b4, #3c94cf);
 }
-#roadBox .bg5{
+
+#roadBox .bg5 {
     background-color: #4d58b4;
 }
-#roadBox .bg6{
+
+#roadBox .bg6 {
     background: -webkit-linear-gradient(#fc6f6e, #4d58b4);
 }
-#roadBox .bg7{
+
+#roadBox .bg7 {
     background-color: #fc6f6e;
 }
 
-#roadBox .peopleBox{
+#roadBox .bg8 {
+    background: -webkit-linear-gradient(#fc6f6e, #03c2b2);
+}
+
+#roadBox .peopleBox {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0.47rem;
-    height: 0.84rem;
+    height: 0.88rem;
     transform: translate(3.9rem, -2.5rem);
 }
-#roadBox .peopleBox div{
+
+#roadBox .peopleBox div {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
-#roadBox .peopleBox img{
+
+#roadBox .peopleBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    display: none;
 }
 
-#roadBox .stairBox{
+#roadBox .stairBox {
     position: absolute;
     bottom: 0;
     left: 5.7rem;
@@ -48,7 +65,7 @@
     overflow: hidden;
 }
 
-#roadBox .senceBox{
+#roadBox .senceBox {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -58,28 +75,98 @@
     -webkit-mask: url(../images/road_sence/mask.png);
     -webkit-mask-size: 100% 100%;
 }
-#roadBox .senceBox .sence1{
+
+#roadBox .senceBox .sence1 {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 21.44rem;
 }
-#roadBox .senceBox .sence2{
+
+#roadBox .senceBox .sence2 {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 18.18rem;
 }
-#roadBox .senceBox .sence3,#roadBox .sence3sp{
+#roadBox .senceBox .sence2 .door1{
+    position: absolute;
+    bottom: 2.28rem;
+    left: 3.75rem;
+    width: 0.5rem;
+    height: 1.2rem;
+}
+#roadBox .senceBox .sence2 .door2{
+    position: absolute;
+    top: 5.49rem;
+    left: 3.81rem;
+    width: 0.48rem;
+    height: 1.21rem;
+}
+#roadBox .senceBox .sence2 .door3{
+    position: absolute;
+    top: 2.09rem;
+    left: 3.79rem;
+    width: 0.41rem;
+    height: 1.16rem;
+}
+#roadBox .senceBox .sence2 .door img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#roadBox .senceBox .sence3 .door1{
+    position: absolute;
+    bottom: 0.49rem;
+    left: 3.35rem;
+    width: 0.41rem;
+    height: 1.08rem;
+}
+#roadBox .senceBox .sence3 .door2{
+    position: absolute;
+    bottom: 2.81rem;
+    left: 5.29rem;
+    width: 0.66rem;
+    height: 1.75rem;
+}
+#roadBox .senceBox .sence3 .door3{
+    position: absolute;
+    top: 3.75rem;
+    left: 3.83rem;
+    width: 0.62rem;
+    height: 1.19rem;
+}
+#roadBox .senceBox .sence3 .door4{
+    position: absolute;
+    top: 1.38rem;
+    left: 4.49rem;
+    width: 0.81rem;
+    height: 1.71rem;
+}
+#roadBox .senceBox .sence3 .door img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#roadBox .senceBox .sence3, #roadBox .sence3sp {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 13.82rem;
 }
-#roadBox .senceBox .sence3 .wheelBox{
+
+#roadBox .senceBox .sence3 .wheelBox {
     position: absolute;
     top: 4.3rem;
     left: 3.67rem;
@@ -87,28 +174,189 @@
     height: 3.26rem;
     background-image: url(../images/road_sence/3/4_1.png);
 }
-#roadBox .senceBox .sence3 .wheelBox .wheel{
+
+#roadBox .senceBox .sence3 .wheelBox .wheel {
     position: absolute;
     width: 1rem;
     height: 1rem;
 }
-#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(1){
+
+#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(1) {
     top: 0;
     left: 50%;
     margin-left: -0.5rem;
 }
-#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(2){
+
+#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(2) {
     top: 50%;
     left: -0.1rem;
     margin-top: -0.5rem;
 }
-#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(3){
+
+#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(3) {
     bottom: 0;
     left: 50%;
     margin-left: -0.5rem;
 }
-#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(4){
+
+#roadBox .senceBox .sence3 .wheelBox .wheel:nth-child(4) {
     top: 50%;
     right: -0.1rem;
     margin-top: -0.5rem;
+}
+
+#roadBox .senceBox .sence4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10.43rem;
+}
+
+#roadBox .senceBox .rocket {
+    position: absolute;
+    top: 0;
+    right: 0.9rem;
+    width: 1.5rem;
+    height: 4.5rem;
+}
+#roadBox .senceBox .rocket img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#roadBox .senceBox .mask1 {
+    -webkit-mask: url(../images/road_sence/4/m1.png);
+    -webkit-mask-size: 100% 100%;
+}
+
+#roadBox .senceBox .mask2 {
+    -webkit-mask: url(../images/road_sence/4/m2.png);
+    -webkit-mask-size: 100% 100%;
+}
+
+#roadBox .senceBox .mask3 {
+    -webkit-mask: url(../images/road_sence/4/m3.png);
+    -webkit-mask-size: 100% 100%;
+}
+
+#roadBox .senceBox .mask1 .color {
+    position: absolute;
+    top: 4rem;
+    left: 3rem;
+    width: 0.5rem;
+    height: 3.7rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 0) 100%);
+    -webkit-animation: lineAnim1 2s 0s infinite linear both;
+}
+
+#roadBox .senceBox .mask3 .color {
+    position: absolute;
+    top: 1rem;
+    left: 2.5rem;
+    width: 0.5rem;
+    height: 3.7rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 0) 100%);
+    -webkit-animation: lineAnim1 2s 0.7s infinite linear both;
+}
+
+@-webkit-keyframes lineAnim1 {
+    0% {
+        -webkit-transform: translateX(0) rotate(45deg);
+    }
+    100% {
+        -webkit-transform: translateX(5rem) rotate(45deg);
+    }
+}
+
+#roadBox .senceBox .mask2 .color {
+    position: absolute;
+    top: 2.5rem;
+    left: 5.3rem;
+    width: 0.5rem;
+    height: 3.7rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 0) 100%);
+    -webkit-animation: lineAnim2 2s 0.3s infinite linear both;
+}
+
+@-webkit-keyframes lineAnim2 {
+    0% {
+        -webkit-transform: translateX(0) rotate(-45deg);
+    }
+    100% {
+        -webkit-transform: translateX(-5rem) rotate(-45deg);
+    }
+}
+
+.zindex2{
+    z-index: 2;
+    transform: translateZ(0);
+}
+.cloudBox img {
+    position: absolute;
+    right: -2rem;
+}
+
+.cloudBox .cloud1 {
+    width: 1.35rem;
+}
+
+.cloudBox .cloud2 {
+    width: 1.14rem;
+}
+
+.cloudBox .cloud3 {
+    width: 1.8rem;
+}
+
+.cloudBox .cloud4 {
+    width: 1.67rem;
+}
+
+.cloudBox img:nth-child(1) {
+    top: 5%;
+    -webkit-animation: clouding 17s linear infinite;
+}
+
+.cloudBox img:nth-child(2) {
+    top: 16%;
+    -webkit-animation: clouding 16s 1s linear infinite;
+}
+
+.cloudBox img:nth-child(3) {
+    top: 21%;
+    -webkit-animation: clouding 13s 1.7 linear infinite;
+}
+
+.cloudBox img:nth-child(4) {
+    top: 30%;
+    -webkit-animation: clouding 15s linear infinite;
+}
+
+.cloudBox img:nth-child(5) {
+    top: 40%;
+    -webkit-animation: clouding 17s 1.3s linear infinite;
+}
+
+.cloudBox img:nth-child(6) {
+    top: 50%;
+    -webkit-animation: clouding 16s linear infinite;
+}
+
+.cloudBox img:nth-child(7) {
+    top: 65%;
+    -webkit-animation: clouding 13s 0.8s linear infinite;
+}
+
+.cloudBox img:nth-child(7) {
+    top: 85%;
+    -webkit-animation: clouding 15s 0.2s linear infinite;
+}
+@-webkit-keyframes clouding{
+	0%{transform: translate(0,0);}
+	100%{transform: translate(-12rem,0);}
 }
