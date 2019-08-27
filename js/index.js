@@ -76,8 +76,19 @@ $(document).ready(function () {
 
 	//------------------------------页面逻辑代码-----------------------
 	var roadBox = $("#roadBox");
+	var indexBox = $("#indexBox");
+	var ruleBox = $("#ruleBox");
+	var baseQABox = $("#baseQABox");
+	var resultBox = $("#resultBox");
 
 	var iroadSence;
+	var startAnswerFlag = false;
+
+	var baseInfoBoxScroll = new IScroll('#baseInfoBox', {
+		bounce: false,
+		scrollbars: true,
+		click: true
+	});
 
 	/**
 	 * 页面初始化
@@ -85,7 +96,7 @@ $(document).ready(function () {
 	function pageInit() {
 		if (loadingFlag && coinAnimeFlag) {
 			icom.fadeOut(loadingBox);
-			roadSenceInit();
+			// indexBoxAnime();
 			eventInit();
 			DevelopTest();
 			monitor_handler();
@@ -99,7 +110,13 @@ $(document).ready(function () {
 		// loadingBox.hide();
 		// QABox.show();
 
-		senceAnimeTest();
+		// roadSenceInit();
+		// senceAnimeTest();
+
+		baseQABox.show();
+		baseInfoBoxScroll.refresh();
+
+		// resultBox.show();
 	}
 
 	/**
@@ -134,6 +151,49 @@ $(document).ready(function () {
 	 */
 	function eventInit() {
 		$(".limitBtn").on("touchend", limitClick);
+
+		indexBox.find(".startBtn").on("touchend",startAnswer);
+		$(".ruleBtn").on("touchend",showRule);
+	}
+
+	/**
+	 * 显示活动规则
+	 */
+	function showRule(){
+		icom.popOn(ruleBox)
+	}
+
+	/**
+	 * 开始回答
+	 */
+	function startAnswer(){
+		if(startAnswerFlag){
+			startAnswerFlag = false;
+		}
+	}
+
+	/**
+	 * 首页动画
+	 */
+	function indexBoxAnime(){
+		var title = indexBox.find(".title");
+		var sence = indexBox.find(".sence");
+		var airship = indexBox.find(".airship");
+		var startBtn = indexBox.find(".startBtn");
+
+		indexBox.show();
+		title.css({scale:0})
+		.transition({scale:1,opacity:1},800);
+		sence.transition({opacity:1,delay:600},700);
+		startBtn.transition({opacity:1,delay:1100},700,function(){
+			startAnswerFlag = true;
+		});
+
+		airship.gifOn({
+            path: "images/indexBox/airship/",
+			num: 10,
+			speed: 150
+        });
 	}
 
 	/**

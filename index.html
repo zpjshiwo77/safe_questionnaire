@@ -25,6 +25,155 @@
     <article style="display: none;">
         <div class="fontLoad hide">1</div>
 
+        <section id="resultBox" class="none">
+            <div class="bottom">
+                <img src="images/resultBox/d.jpg" class="full">
+                <img src="images/resultBox/light.jpg" class="full lighting">
+            </div>
+            <div class="cloudBox">
+                <img src="images/road_sence/c1.png" class="cloud1">
+                <img src="images/road_sence/c2.png" class="cloud2">
+                <img src="images/road_sence/c3.png" class="cloud3">
+            </div>
+            <img src="images/resultBox/tips.png" class="tips">
+        </section>
+
+        <section id="baseQABox" class="none">
+            <div class="bar"></div>
+            <div class="baseInfoBox" id="baseInfoBox">
+                <div class="scrollBox">
+                    <div class="block">
+                        <div class="label">您的性别？</div>
+                        <div class="ansBox ansBox1" id="sex">
+                            <div class="ans">男</div>
+                            <div class="ans">女</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="label">您的出生日期</div>
+                        <div class="selectBox">
+                            <img src="images/chose/select.png" class="full">
+                            <select id="birthday">
+                            </select>
+                        </div>
+                        <div class="label">年</div>
+                    </div>
+                    <div class="block">
+                        <div class="label">您的学历</div>
+                        <div class="selectBox">
+                            <img src="images/chose/select.png" class="full">
+                            <select id="birthday">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="label">您的职业是？</div>
+                        <div class="ansBox" id="career">
+                            <div class="itemBox">
+                                <div class="itemName">小微企业主</div>
+                                <div class="box ansBox2">
+                                    <div class="ans">自主创业者</div>
+                                    <div class="ans">私营业主/个体户</div>
+                                    <div class="ans">网店店主/微商店主</div>
+                                </div>
+                            </div>
+                            <div class="itemBox">
+                                <div class="itemName">普通公务员/白领/蓝领</div>
+                                <div class="box ansBox3">
+                                    <div class="ans">公司普通职员（非政府部门、非事业单位）</div>
+                                    <div class="ans">普通公务员/事业单位职员</div>
+                                    <div class="ans" style="font-size:0.2rem;">服务业人员（服务员、美容美发师、外卖员、快递员等）</div>
+                                    <div class="ans">工人（工厂工人、建筑工人等）</div>
+                                    <div class="ans">销售人员/业务代表</div>
+                                </div>
+                            </div>
+                            <div class="itemBox">
+                                <div class="itemName">专业人士</div>
+                                <div class="box ansBox3">
+                                    <div class="ans">专业人士（律师、医生、设计师、建筑师等）</div>
+                                    <div class="ans">现役军人/公安/武警</div>
+                                </div>
+                            </div>
+                            <div class="itemBox">
+                                <div class="itemName">中高层管理者</div>
+                                <div class="box ansBox2">
+                                    <div class="ans">企业主</div>
+                                    <div class="ans">企业经理/主管</div>
+                                    <div class="ans">政府/事业单位主管</div>
+                                </div>
+                            </div>
+                            <div class="itemBox">
+                                <div class="itemName">其他</div>
+                                <div class="box ansBox1">
+                                    <div class="ans">学生</div>
+                                    <div class="ans">农民</div>
+                                    <div class="ans">家庭主妇</div>
+                                    <div class="ans">自由职业</div>
+                                    <div class="ans">退休人员</div>
+                                    <div class="ans">其他</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="label">您目前居住的省市？</div>
+                        <div class="selectBox">
+                            <img src="images/chose/select.png" class="full">
+                            <select id="city">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="label">您目前的婚姻状况是？</div>
+                        <div class="ansBox ansBox2" id="marriage">
+                            <div class="ans">未婚</div>
+                            <div class="ans">已婚</div>
+                            <div class="ans">离异</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="label">请问您是否有孩子呢？</div>
+                        <div class="ansBox ansBox1" id="hasChild">
+                            <div class="ans">有孩子</div>
+                            <div class="ans">没有孩子</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="labelsp">请问您每月可支配收入大约为人民币多少元？（包括您的工资收入、经营收入、财产净收入、养老金、补贴等）</div>
+                        <div class="selectBox" style="width:2.5rem;">
+                            <img src="images/chose/select.png" class="full">
+                            <select id="income">
+                                <option value="3000以内">3000以内</option>
+                                <option value="3000~5000">3000~5000</option>
+                                <option value="5000~10000">5000~10000</option>
+                                <option value="1万—2万">1万—2万</option>
+                                <option value="2万以上">2万以上</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="labelsp">请问您平均每月消费金额大约为人民币多少元（包括生活消费、购买理财产品等）？</div>
+                        <div class="selectBox" style="width:2.5rem;">
+                            <img src="images/chose/select.png" class="full">
+                            <select id="cost">
+                                <option value="3000以内">3000以内</option>
+                                <option value="3000~5000">3000~5000</option>
+                                <option value="5000~10000">5000~10000</option>
+                                <option value="1万—2万">1万—2万</option>
+                                <option value="2万以上">2万以上</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formBox">
+                <img src="images/baseQABox/form.png" class="full">
+                <input type="text" id="name" placeholder="您的姓名">
+                <input type="tel" id="phone" placeholder="您的手机号" maxlength="11">
+                <div id="submitBtn"></div>
+            </div>
+        </section>
+
         <section id="roadBox" class="none">
             <div class="bgBox full">
                 <div class="bg8 full2 none"></div>
@@ -139,6 +288,30 @@
             </div>
         </section>
 
+        <section id="indexBox" class="none">
+            <img src="images/common/logo.png" class="logo">
+            <div class="ruleBtn">
+                <img src="images/indexBox/rulebtn.png" class="full">
+            </div>
+            <div class="cont">
+                <div class="cloudBox full">
+                    <img src="images/road_sence/c1.png" class="cloud1">
+                    <img src="images/road_sence/c2.png" class="cloud2">
+                    <img src="images/road_sence/c3.png" class="cloud3">
+                    <img src="images/road_sence/c4.png" class="cloud4">
+                    <img src="images/road_sence/c3.png" class="cloud3">
+                </div>
+                <img src="images/indexBox/title.png" class="title hide">
+                <div class="sence hide">
+                    <img src="images/indexBox/sence.png" class="full">
+                    <div class="airship"></div>
+                </div>
+                <div class="startBtn Emphasize hide">
+                    <img src="images/indexBox/btn.png" class="full">
+                </div>
+            </div>
+        </section>
+
         <section id="loadingBox">
             <div class="cont">
                 <div class="award">
@@ -157,6 +330,13 @@
             </div>
         </section>
 
+        <aside id="ruleBox" class="none">
+            <div class="cont">
+                <img src="images/indexBox/rule.png" class="full">
+                <a class="close"></a>
+            </div>
+        </aside>
+
         <img src="images/common/mask.png" class="coverMask full">
     </article>
     <!--------------------------------------------------------------javascript区域-------------------------------------------------------------------------------------->
@@ -167,6 +347,7 @@
     <script src="js/base/wxUser.js"></script>
     <script src="js/plugs/iphone.gif.js"></script>
     <script src="js/plugs/sence.js"></script>
+    <script src="js/plugs/iscroll.js"></script>
     <script>ibase.load('js/index.js');</script>
 </body>
 
