@@ -12,6 +12,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="js/plugs/swiper.min.css" />
     <script src="js/base/base.js"></script>
     <script>
         ibase.init();
@@ -62,7 +63,11 @@
                         <div class="label">您的学历</div>
                         <div class="selectBox">
                             <img src="images/chose/select.png" class="full">
-                            <select id="birthday">
+                            <select id="education">
+                                <option value="高中">高中</option>
+                                <option value="专科">专科</option>
+                                <option value="本科">本科</option>
+                                <option value="硕士及以上">硕士及以上</option>
                             </select>
                         </div>
                     </div>
@@ -170,7 +175,7 @@
                 <img src="images/baseQABox/form.png" class="full">
                 <input type="text" id="name" placeholder="您的姓名">
                 <input type="tel" id="phone" placeholder="您的手机号" maxlength="11">
-                <div id="submitBtn"></div>
+                <div id="submitBtn" class="limitBtn"></div>
             </div>
         </section>
 
@@ -288,6 +293,202 @@
             </div>
         </section>
 
+        <section id="QABox" class="none">
+            <div class="questionBox questionBox1">
+
+                <div class="qabox qa1 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>1</p>
+                    </div>
+                    <p class="question">您日常常用的的支付<br>方式是？ <span>（多选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans1">刷手机等移动支付</div>
+                        <div class="ans ans1">刷卡（信用卡/借记卡）</div>
+                        <div class="next center"></div>
+                    </div>
+                </div>
+
+                <div class="qabox qa2 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>2</p>
+                    </div>
+                    <p class="question">您每月发生的移动支<br>付的金额大约是：<span>（单选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans2">500元以下</div>
+                        <div class="ans ans2">500-1000元</div>
+                        <div class="ans ans2">1000-2000元</div>
+                        <div class="ans ans2">2000-5000元</div>
+                        <div class="ans ans2">5000元以上</div>
+                        <div class="ans ans2" style="padding-top:0.07rem;">没有使用过<br>移动支付</div>
+                    </div>
+                </div>
+
+                <div class="qabox qa3 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>3</p>
+                    </div>
+                    <p class="question">以下哪些因素是您选择移动支付产品的主要考虑因素？<span>（可多选，最多选3项）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans2">习惯</div>
+                        <div class="ans ans2">优惠/促销活动多</div>
+                        <div class="ans ans2">安全</div>
+                        <div class="ans ans2">赔付保障</div>
+                        <div class="ans ans2">便捷</div>
+                        <div class="ans ans2">体验好</div>
+                        <div class="ans ans2">大公司品牌</div>
+                        <div class="next inline" style="margin-left:1.05rem;position: relative;left: -0.3rem;"></div>
+                    </div>
+                </div>
+
+                <div class="qabox qa4 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>4</p>
+                    </div>
+                    <p class="question">以下主流移动支付产品，您最优先（较偏向）使用哪一项？<span>（单选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans3">二维码支付</div>
+                        <div class="ans ans3" style="padding-top:0.07rem;">
+                            ApplePay、HuaweiPay、SamsungPay<br>等手机闪付（手机PAY系列）</div>
+                        <div class="ans ans3">手机网页中选择银行卡快捷支付</div>
+                    </div>
+                </div>
+
+                <div class="qabox qa5 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>5</p>
+                    </div>
+                    <p class="question">较偏向使用此支付<br>产品的原因是：<span>（单选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans2" style="margin: 0 0.3rem 0.1rem;">觉得更方便</div>
+                        <div class="ans ans2" style="margin: 0 0.3rem 0.1rem;">觉得更安全</div>
+                        <div class="ans ans4">只是习惯，其实用哪个都一样</div>
+                        <div class="ans ans4">我觉得支付成功率高</div>
+                        <div class="ans ans4">我习惯的品牌只支持这个支付方式</div>
+                    </div>
+                </div>
+
+                <div class="qabox qa6 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>6</p>
+                    </div>
+                    <p class="question">使用扫码支付时，您<br>会更倾向于？ <span>（单选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans1">我扫商家（二维码主扫）</div>
+                        <div class="ans ans1">商家扫我（二维码被扫）</div>
+                        <div class="ans ans1">主要看商家要求</div>
+                    </div>
+                </div>
+
+                <div class="qabox qa7 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>7</p>
+                    </div>
+                    <p class="question">使用扫码支付时，您<br>会更倾向于？<span>（单选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans3">绑定的储蓄卡</div>
+                        <div class="ans ans3">绑定的信用卡</div>
+                        <div class="ans ans3">网络借贷账户（如京东白条、蚂蚁花呗）</div>
+                        <div class="ans ans3">支付账户零钱</div>
+                    </div>
+                </div>
+
+                <div class="qabox qa8 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>8</p>
+                    </div>
+                    <p class="question">以下场景中，您使用移动支付频次最高的3个场景是？<span>（可多选，最多选3项）</span></p>
+                    <div class="swiper-container" id="qaswiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="ansBox">
+                                    <img src="images/QABox/1/t4.png" class="tips">
+                                    <div class="ans ans2">网购消费</div>
+                                    <div class="ans ans2">点外卖</div>
+                                    <div class="ans ans2">信用卡还款</div>
+                                    <div class="ans ans2 two">充值或购买游戏<br>点卡等虚拟物品</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ansBox">
+                                    <img src="images/QABox/1/t1.png" class="tips">
+                                    <div class="ans ans2 two">商场、便利店及餐饮类等中大型实体商户</div>
+                                    <div class="ans ans2 two">小摊贩、菜场、水果店等小型实体商店</div>
+                                    <div class="ans ans2 two">乘坐地铁、公交车、出租车</div>
+                                    <div class="ans ans2">停车场、ETC缴费</div>
+                                    <div class="ans ans4">挂号、买药等医院、医疗支付</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ansBox">
+                                    <img src="images/QABox/1/t2.png" class="tips">
+                                    <div class="ans ans3">购买火车票、飞机票等</div>
+                                    <div class="ans ans3">购买电影票、门票</div>
+                                    <div class="ans ans3">公共缴费（水电煤/网费等）</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ansBox">
+                                    <img src="images/QABox/1/t3.png" class="tips">
+                                    <div class="ans ans4">给他人转账汇款</div>
+                                    <div class="ans ans4 two">购买理财产品<br>（包括股票，国债，基金，保险，P2P网贷等）</div>
+                                    <div class="next center"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="qabox qa9 none">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>9</p>
+                    </div>
+                    <p class="question" style="font-size: 0.32rem; padding-right: 0.4rem;text-align: justify;">
+                        在您消费过的线下支付场景中，假设您在购买理财产品（包括股票，国债，基金，保险，P2P网贷等）消费了10次，您使用移动支付的次数占多少次：<span>（单选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans5">10</div>
+                        <div class="ans ans5">9</div>
+                        <div class="ans ans5">8</div>
+                        <div class="ans ans5">7</div>
+                        <div class="ans ans5">6</div>
+                        <div class="ans ans5">5</div>
+                        <div class="ans ans5">4</div>
+                        <div class="ans ans5">3</div>
+                        <div class="ans ans5">2</div>
+                        <div class="ans ans5">1</div>
+                        <div class="ans ans2 two"
+                            style="margin-right: 0.95rem;position: relative;top:-0.1rem;left: -0.1rem">
+                            我在这一场景下，<br>没有用过移动支付</div>
+                    </div>
+                </div>
+
+                <div class="qabox qa10 ">
+                    <div class="icon">
+                        <p>1</p>
+                        <p>10</p>
+                    </div>
+                    <p class="question">您使用移动支付方式的频率是：<span>（单选）</span></p>
+                    <div class="ansBox">
+                        <div class="ans ans3">每天不超过1次</div>
+                        <div class="ans ans3">每天1-3次</div>
+                        <div class="ans ans3">每天3-5次</div>
+                        <div class="ans ans3">每天超过5次</div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </section>
+
         <section id="indexBox" class="none">
             <img src="images/common/logo.png" class="logo">
             <div class="ruleBtn">
@@ -345,9 +546,11 @@
     <script src="js/base/framwork.js"></script>
     <script src="js/base/monitor.js"></script>
     <script src="js/base/wxUser.js"></script>
+    <script src="js/form/citydata.js"></script>
     <script src="js/plugs/iphone.gif.js"></script>
     <script src="js/plugs/sence.js"></script>
     <script src="js/plugs/iscroll.js"></script>
+    <script src="js/plugs/swiper.min.js"></script>
     <script>ibase.load('js/index.js');</script>
 </body>
 

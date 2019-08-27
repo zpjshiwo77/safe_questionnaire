@@ -80,6 +80,7 @@ $(document).ready(function () {
 	var ruleBox = $("#ruleBox");
 	var baseQABox = $("#baseQABox");
 	var resultBox = $("#resultBox");
+	var QABox = $("#QABox");
 
 	var iroadSence;
 	var startAnswerFlag = false;
@@ -110,35 +111,48 @@ $(document).ready(function () {
 		// loadingBox.hide();
 		// QABox.show();
 
-		// roadSenceInit();
-		// senceAnimeTest();
+		roadSenceInit();
+		senceAnimeTest();
+		QABox.show();
+		swiperInit();
 
-		baseQABox.show();
-		baseInfoBoxScroll.refresh();
+		// baseQABoxShow();
 
 		// resultBox.show();
 	}
 
 	/**
+	 * swiper初始化
+	 */
+	function swiperInit() {
+		var qa8swiper = new Swiper('#qaswiper', {
+			pagination: {
+				el: '.swiper-pagination',
+			},
+		})
+	}
+
+	/**
 	 * 场景动画测试用
 	 */
-	function senceAnimeTest(){
+	function senceAnimeTest() {
 		var num = 1;
 		var sence = 1;
-		articleBox.on("touchend",function(){
-			if(!iroadSence.animeFlag){
-				var a = iroadSence["sence"+sence+"step"+num];
+		articleBox.on("touchend", function () {
+			if (!iroadSence.animeFlag) {
+				var a = iroadSence["sence" + sence + "step" + num];
 				a();
 				num++;
-				if(num > 10 && sence == 1){
+				// num = 11;
+				if (num > 10 && sence == 1) {
 					num = 1;
 					sence = 2;
 				}
-				else if(num > 8 && sence == 2){
+				else if (num > 8 && sence == 2) {
 					num = 1;
 					sence = 3;
 				}
-				else if(num > 6 && sence == 3){
+				else if (num > 6 && sence == 3) {
 					num = 1;
 					sence = 4;
 				}
@@ -152,22 +166,152 @@ $(document).ready(function () {
 	function eventInit() {
 		$(".limitBtn").on("touchend", limitClick);
 
-		indexBox.find(".startBtn").on("touchend",startAnswer);
-		$(".ruleBtn").on("touchend",showRule);
+		indexBox.find(".startBtn").on("touchend", startAnswer);
+		$(".ruleBtn").on("touchend", showRule);
+
+		baseQABox.find(".itemName").on("click", openCareerItem);
+		baseQABox.on("click", ".ans", choseBaseQAAns);
+		$("#birthday").on('change', changeMarriageItem);
+		$("#submitBtn").on("touchend", vefBaseInfo);
+	}
+
+	/**
+	 * 验证基础信息
+	 */
+	function vefBaseInfo() {
+		var baseInfo = {
+			name: $("#name").val(),
+			phone: $("#phone").val(),
+			sex: $("#sex").find(".act").text(),
+			birthday: $("#birthday").val(),
+			education: $("#education").val(),
+			occupation: $("#career").find(".act").text(),
+			city: $("#city").val(),
+			maritalStatus: $("#marriage").find(".act").text(),
+			isChildren: $("#hasChild").find(".act").text(),
+			income: $("#income").val(),
+			monthlyMoney: $("#cost").val()
+		}
+
+		if (baseInfo.name == "") icom.alert("请输入姓名");
+		else if (!icom.checkStr(baseInfo.phone)) icom.alert("请输入正确的手机号");
+		else if (baseInfo.sex == "") icom.alert("请选择性别");
+		else if (baseInfo.birthday == "") icom.alert("请选择出生年月");
+		else if (baseInfo.education == "") icom.alert("请选择学历");
+		else if (baseInfo.occupation == "") icom.alert("请选择职业");
+		else if (baseInfo.city == "") icom.alert("请选择城市");
+		else if (baseInfo.maritalStatus == "") icom.alert("请选择婚姻状态");
+		else if (baseInfo.isChildren == "") icom.alert("请选择是否有小孩");
+		else if (baseInfo.income == "") icom.alert("请选择可支配收入");
+		else if (baseInfo.monthlyMoney == "") icom.alert("请选择每月消费");
+		else sendInfo(baseInfo);
+	}
+
+	/**
+	 * 发送信息
+	 */
+	function sendInfo(baseInfo) {
+		console.log(baseInfo);
+		showResultBox();
+	}
+
+	/**
+	 * 显示结果页面
+	 */
+	function showResultBox() {
+		icom.fadeOut(baseQABox);
+		resultBox.show();
+	}
+
+	/**
+	 * 基础问答显示
+	 */
+	function baseQABoxShow() {
+		baseQABox.show();
+		baseInfoBoxScroll.refresh();
+		yearSelectInit();
+		citySelectInit();
+	}
+
+	/**
+	 * 修改结婚徐选项
+	 */
+	function changeMarriageItem() {
+		var year = parseInt($("#birthday").val());
+		var sex = $("#sex").find(".act").text();
+		var item = $("#marriage").children();
+		item.removeClass('act');
+		if (year >= 1999) {
+			item.eq(1).hide();
+			item.eq(2).hide();
+		}
+		else if (year >= 1997 && sex == "男") {
+			item.eq(1).hide();
+			item.eq(2).hide();
+		}
+		else {
+			item.eq(1).show();
+			item.eq(2).show();
+		}
+		baseInfoBoxScroll.refresh();
+	}
+
+	/**
+	 * 年份选择初始化
+	 */
+	function yearSelectInit() {
+		var cont = '';
+		for (var i = 1939; i <= 2009; i++) {
+			cont += '<option value="' + i + '" ' + (i == 1980 ? 'selected' : '') + '>' + i + '</option>'
+		}
+		$("#birthday").append(cont);
+	}
+
+	/**
+	 * 城市选择初始化
+	 */
+	function citySelectInit() {
+		var cont = '';
+		for (var i = 0; i < cityData.length; i++) {
+			var ele = cityData[i];
+			cont += '<option value="' + ele.label + '">' + ele.label + '</option>';
+		}
+		$("#city").append(cont);
+	}
+
+	/**
+	 * 选择基础问题的答案
+	 */
+	function choseBaseQAAns() {
+		var that = $(this);
+		var box = that.parents(".ansBox");
+		box.find(".ans").removeClass('act');
+		that.addClass('act');
+	}
+
+	/**
+	 * 展开职业选择项
+	 */
+	function openCareerItem() {
+		var that = $(this);
+		var box = that.siblings('.box');
+		baseQABox.find(".box").hide();
+		box.show();
+		baseInfoBoxScroll.refresh();
 	}
 
 	/**
 	 * 显示活动规则
 	 */
-	function showRule(){
+	function showRule() {
 		icom.popOn(ruleBox)
 	}
 
 	/**
 	 * 开始回答
 	 */
-	function startAnswer(){
-		if(startAnswerFlag){
+	function startAnswer() {
+		if (startAnswerFlag) {
 			startAnswerFlag = false;
 		}
 	}
@@ -175,31 +319,31 @@ $(document).ready(function () {
 	/**
 	 * 首页动画
 	 */
-	function indexBoxAnime(){
+	function indexBoxAnime() {
 		var title = indexBox.find(".title");
 		var sence = indexBox.find(".sence");
 		var airship = indexBox.find(".airship");
 		var startBtn = indexBox.find(".startBtn");
 
 		indexBox.show();
-		title.css({scale:0})
-		.transition({scale:1,opacity:1},800);
-		sence.transition({opacity:1,delay:600},700);
-		startBtn.transition({opacity:1,delay:1100},700,function(){
+		title.css({ scale: 0 })
+			.transition({ scale: 1, opacity: 1 }, 800);
+		sence.transition({ opacity: 1, delay: 600 }, 700);
+		startBtn.transition({ opacity: 1, delay: 1100 }, 700, function () {
 			startAnswerFlag = true;
 		});
 
 		airship.gifOn({
-            path: "images/indexBox/airship/",
+			path: "images/indexBox/airship/",
 			num: 10,
 			speed: 150
-        });
+		});
 	}
 
 	/**
 	 * 场景初始化
 	 */
-	function roadSenceInit(){
+	function roadSenceInit() {
 		roadBox.show();
 		iroadSence = new roadSence();
 	}

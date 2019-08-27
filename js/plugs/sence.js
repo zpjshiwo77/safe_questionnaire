@@ -260,30 +260,33 @@ var roadSence = function () {
         console.log("sence1step11");
         _self.animeFlag = true;
         var box = sence[0].box;
-        var box2 = sence[3].box;
+        var box2 = sence[2].box;
+        var box3 = roadBox.find(".sence3sp");
 
         peopleDir.ur.ele.gifResume();
         people.transition({ x: "4.3rem", y: "-3.4rem" }, 1000, "linear")
             .transition({ x: "4.4rem", y: "-3.5rem", opacity: 0 }, function () {
-                box.css({ "z-index": 3 }).transition({ y: "7rem" }, trfTime * 2, "linear", function () {
+                box.css({ "z-index": 3 }).transition({ y: "7.25rem" }, trfTime * 2, "linear", function () {
                     stair.css({ y: "0rem", "z-index": 2, opacity: 0 }).transition({ opacity: 1 }, function () {
                         peopleDir.ur.ele.hide();
                         peopleDir.ur.ele.gifPause();
                         peopleDir.u.ele.show();
-                        people.css({ x: "5.9rem", y: "-0.7rem" })
+                        people.css({ x: "6rem", y: "-0.45rem" })
                             .transition({ opacity: 1 });
                         bgArr[0].transition({ y: "100%" }, 2000, "linear");
                         bgArr[7].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear", function () {
                             bgArr[7].transition({ y: "100%" }, 2000, "linear");
-                            bgArr[6].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear");
+                            bgArr[4].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear");
                         });
-                        box.transition({ y: "14.54rem" }, 4000, "linear");
-                        stair.transition({ y: "7.54rem" }, 4000, "linear");
-                        box2.show().css({ y: "-7.54rem" }).transition({ y: "0" }, 4000, "linear", function () {
+                        box.transition({ y: "15.1rem" }, 4000, "linear");
+                        stair.transition({ y: "7.85rem" }, 4000, "linear");
+                        box2.show().css({ y: "-7.85rem" });
+                        _sence3doorInit();
+                        box2.transition({ y: "0" }, 4000, "linear", function () {
+                            box3.show().css({ opacity: 0 }).transition({ opacity: 1 });
                             box.hide();
                             bgArr[0].hide();
                             bgArr[7].hide();
-                            stair.transition({ opacity: 0 });
                             _self.animeFlag = false;
                             if (callback) callback();
                         });
