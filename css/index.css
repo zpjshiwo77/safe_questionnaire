@@ -612,26 +612,34 @@ img{
 	text-align: center;
 	overflow: hidden;
 	font-size: 0.3rem;
+	display:-webkit-flex;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 #QABox .ansBox .ans{
-	display: inline-block;
+	/* display: inline-block; */
 	padding-left: 0.65rem;
+	padding-right: 0.05rem;
 	height: 0.7rem;
 	text-align: center;
 	color: #fff;
-	padding-top: 0.18rem;
+	padding-top: 0.17rem;
 	box-sizing: border-box;
 	overflow: hidden;
 	font-size: 0.24rem;
+	margin-bottom: 0.1rem!important;
 }
 #QABox .ansBox .ans.sp{
-	padding-top: 0.23rem
+	padding-top: 0.21rem
 }
 #QABox .two{
-	padding-top: 0.07rem!important;
+	padding-top: 0.05rem!important;
 }
 #QABox .two.sp{
-	padding-top: 0.12rem!important;
+	padding-top: 0.1rem!important;
 }
 #QABox .ansBox .next{
 	width: 2rem;
@@ -639,10 +647,10 @@ img{
 	background-image: url(../images/QABox/next.png);
 }
 #QABox .ansBox .next.center{
-	margin: 0.2rem auto;
+	margin: 0.2rem 1.5rem;
 }
 #QABox .ansBox .next.inline{
-	display: inline-block;
+	/* display: inline-block; */
 }
 #QABox .title{
 	position: absolute;
@@ -655,7 +663,7 @@ img{
 #QABox .questionBox1 .tips{
 	display: block;
 	width: 3.62rem;
-	margin: 0 auto 0.3rem;
+	margin: 0 1.5rem 0.3rem;
 }
 #QABox .questionBox1 .ans1{
 	width: 4.07rem;
@@ -670,7 +678,7 @@ img{
 #QABox .questionBox1 .ans2{
 	width: 2.68rem;
 	background-image: url(../images/QABox/1/2.png);
-	margin: 0 0.2rem;
+	margin: 0 0.35rem;
 }
 #QABox .questionBox1 .ans2.act{
 	color: #02948a;
@@ -700,7 +708,7 @@ img{
 #QABox .questionBox1 .ans5{
 	width: 1.67rem;
 	background-image: url(../images/QABox/1/5.png);
-	margin: 0 0.1rem;
+	margin: 0 0.2rem;
 }
 #QABox .questionBox1 .ans5.act{
 	color: #02948a;
@@ -735,6 +743,16 @@ img{
 #QABox .questionBox2 .ans3.act{
 	color: #2670a1;
 	background-image: url(../images/QABox/2/3a.png);
+}
+
+#QABox .questionBox2 .ans4{
+	width: 2.35rem;
+	background-image: url(../images/QABox/2/4.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox2 .ans4.act{
+	color: #2670a1;
+	background-image: url(../images/QABox/2/4a.png);
 }
 
 #QABox .questionBox3 .tips{

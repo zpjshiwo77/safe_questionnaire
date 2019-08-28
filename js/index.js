@@ -6,6 +6,7 @@ $(document).ready(function () {
 	var windowScale = window.innerWidth / 750;
 	var loadingBox = $("#loadingBox");
 	var loadPer = loadingBox.find(".peopleBox");
+	var numBox = loadingBox.find(".num");
 	var loadingFlag = false, coinAnimeFlag = false;
 
 	//----------------------------------------页面初始化----------------------------------------
@@ -244,6 +245,7 @@ $(document).ready(function () {
 		loader.addProgressListener(function (e) {
 			var per = Math.round(e.completedCount / e.totalCount * 50);
 			loadPer.css({ x: 2.5 * per / 100 + "rem" });
+			numBox.html(1000 + parseInt(7888 * per / 100));
 			// loadPer.css({x:3.2*per/100+"rem"});
 		});
 
@@ -253,7 +255,7 @@ $(document).ready(function () {
 		});
 		loader.start();
 
-		coinAnime();
+		// coinAnime();
 	}//end func
 
 	//模拟加载进度
@@ -262,10 +264,12 @@ $(document).ready(function () {
 		per += imath.randomRange(1, 3);
 		per = per > 100 ? 100 : per;
 		loadPer.css({ x: 2.5 * per / 100 + "rem" });
+		numBox.html(1000 + parseInt(7888 * per / 100));
 		// loadPer.css({x:3.2*per/100+"rem"});
 		if (per == 100) {
 			setTimeout(function () {
 				loadingFlag = true;
+				coinAnimeFlag = true;
 				pageInit();
 			}, 200);
 		}
@@ -659,14 +663,14 @@ $(document).ready(function () {
 	function senceSpTransition() {
 		var type = icom.getQueryString('t');
 
-		if(type){
+		if (type) {
 			var anifunc = iroadSence["sence1step12"];
 			anifunc();
-			setTimeout(function(){
+			setTimeout(function () {
 				showNextTypeQs(3);
-			},53000);
+			}, 53000);
 		}
-		else{
+		else {
 			var anifunc = iroadSence["sence1step11"];
 			anifunc();
 			showNextTypeQs(3);
@@ -735,7 +739,7 @@ $(document).ready(function () {
 	/**
 	 * 显示下一个大类的问题
 	 */
-	function showNextTypeQs(nextIndex,t) {
+	function showNextTypeQs(nextIndex, t) {
 		var prebox = QABox.find(".questionBox" + nowQSindex);
 		var nextbox = QABox.find(".questionBox" + nextIndex);
 		var title = QABox.find(".title");
@@ -859,7 +863,6 @@ $(document).ready(function () {
 	 * 金币动画
 	 */
 	function coinAnime() {
-		var numBox = loadingBox.find(".num");
 		var num = 1000;
 
 		var timer = setInterval(function () {
