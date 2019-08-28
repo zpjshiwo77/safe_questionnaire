@@ -1,4 +1,4 @@
-var roadSence = function () {
+var roadSence = function (callback) {
     var _self = this;
 
     _self.animeFlag = false;
@@ -14,8 +14,8 @@ var roadSence = function () {
     var sence3door = [];
     var rocketAni;
 
-    _self.sence1step1 = function () {
-        console.log("sence1step1");
+    _self.sence1step1 = function (callback) {
+        // console.log("sence1step1");
         _self.animeFlag = true;
         var box = sence[0].box;
 
@@ -28,13 +28,14 @@ var roadSence = function () {
                 people.css({ x: "2.7rem", y: "-2.8rem" })
                     .transition({ opacity: 1 }, function () {
                         _self.animeFlag = false;
+                        if(callback) callback();
                     });
             });
         });
     }
 
-    _self.sence1step2 = function () {
-        console.log("sence1step2");
+    _self.sence1step2 = function (callback) {
+        // console.log("sence1step2");
         _self.animeFlag = true;
         var box = sence[0].box;
         var s = sence[0].children.eq(5);
@@ -63,13 +64,14 @@ var roadSence = function () {
                             peopleDir.r.ele.gifPause();
                             peopleDir.ur.ele.show();
                             _self.animeFlag = false;
+                            if(callback) callback();
                         });
                 });
         });
     }
 
-    _self.sence1step3 = function () {
-        console.log("sence1step3");
+    _self.sence1step3 = function (callback) {
+        // console.log("sence1step3");
         _self.animeFlag = true;
         var box = sence[0].box;
         var s = sence[0].children.eq(4);
@@ -84,13 +86,14 @@ var roadSence = function () {
             box.transition({ y: "8rem" }, trfTime);
             people.transition({ y: "-1.3rem" }, trfTime, function () {
                 _self.animeFlag = false;
+                if(callback) callback();
             });
             s2.transition({ opacity: 1 });
         })
     }
 
-    _self.sence1step4 = function () {
-        console.log("sence1step4");
+    _self.sence1step4 = function (callback) {
+        // console.log("sence1step4");
         _self.animeFlag = true;
         var box = sence[0].box;
         var s = sence[0].children.eq(2);
@@ -116,14 +119,15 @@ var roadSence = function () {
                                 box.transition({ y: "11rem" }, trfTime);
                                 people.transition({ y: "-1.7rem" }, trfTime, function () {
                                     _self.animeFlag = false;
+                                    if(callback) callback();
                                 });
                             })
                     })
             })
     }
 
-    _self.sence1step5 = function () {
-        console.log("sence1step5");
+    _self.sence1step5 = function (callback) {
+        // console.log("sence1step5");
         _self.animeFlag = true;
         var s = sence[0].children.eq(2);
 
@@ -137,6 +141,7 @@ var roadSence = function () {
                 peopleDir.ur.ele.gifResume();
                 people.transition({ x: "6.1rem", y: "-1.7rem" }, 700, "linear", function () {
                     _self.animeFlag = false;
+                    if(callback) callback();
                     peopleDir.ur.ele.hide();
                     peopleDir.ur.ele.gifPause();
                     peopleDir.u.ele.show();
@@ -146,8 +151,8 @@ var roadSence = function () {
         })
     }
 
-    _self.sence1step6 = function () {
-        console.log("sence1step6");
+    _self.sence1step6 = function (callback) {
+        // console.log("sence1step6");
         _self.animeFlag = true;
         var box = sence[0].box;
         var s = sence[0].children.eq(0);
@@ -166,13 +171,14 @@ var roadSence = function () {
                     s.transition({ opacity: 1 });
                     box.transition({ y: "12.5rem" }, trfTime, function () {
                         _self.animeFlag = false;
+                        if(callback) callback();
                     });
                 })
         })
     }
 
-    _self.sence1step7 = function () {
-        console.log("sence1step7");
+    _self.sence1step7 = function (callback) {
+        // console.log("sence1step7");
         _self.animeFlag = true;
         peopleDir.ur.ele.gifResume();
         people.css({ x: "4.8rem", y: "-2.5rem" })
@@ -182,11 +188,12 @@ var roadSence = function () {
                 peopleDir.ur.ele.gifPause();
                 peopleDir.ul.ele.show();
                 _self.animeFlag = false;
+                if(callback) callback();
             });
     }
 
-    _self.sence1step8 = function () {
-        console.log("sence1step8");
+    _self.sence1step8 = function (callback) {
+        // console.log("sence1step8");
         _self.animeFlag = true;
         var box = sence[0].box;
 
@@ -200,13 +207,14 @@ var roadSence = function () {
                         peopleDir.ul.ele.gifPause();
                         peopleDir.ur.ele.show();
                         _self.animeFlag = false;
+                        if(callback) callback();
                     });
             });
         })
     }
 
-    _self.sence1step9 = function () {
-        console.log("sence1step9");
+    _self.sence1step9 = function (callback) {
+        // console.log("sence1step9");
         _self.animeFlag = true;
         var box = sence[0].box;
 
@@ -216,13 +224,14 @@ var roadSence = function () {
             people.transition({ x: "4.9rem", y: "-2.2rem" }, 1100, "linear", function () {
                 peopleDir.ur.ele.gifPause();
                 _self.animeFlag = false;
+                if(callback) callback();
             });
         })
 
     }
 
-    _self.sence1step10 = function () {
-        console.log("sence1step10");
+    _self.sence1step10 = function (callback) {
+        // console.log("sence1step10");
         _self.animeFlag = true;
         var box1 = sence[0].box;
         var box2 = sence[1].box;
@@ -251,13 +260,14 @@ var roadSence = function () {
                     bgArr[0].hide();
                     bgArr[1].hide();
                     _self.animeFlag = false;
+                    if(callback) callback();
                 });
             });
         });
     }
 
     _self.sence1step11 = function (callback) {
-        console.log("sence1step11");
+        // console.log("sence1step11");
         _self.animeFlag = true;
         var box = sence[0].box;
         var box2 = sence[2].box;
@@ -297,8 +307,30 @@ var roadSence = function () {
 
     }
 
-    _self.sence2step1 = function () {
-        console.log("sence2step1");
+    _self.sence1step12 = function (callback) {
+        var a = 1;
+        var b = 2;
+
+        function senceAni(){
+            var func = _self["sence"+a+"step"+b];
+            func(function(){
+                b++;
+                if(a == 1 && b > 10){
+                    a = 2;
+                    b = 1;
+                    senceAni();
+                }
+                else if(a == 2 && b > 8){
+                    if(callback) callback();
+                }
+                else senceAni();
+            })
+        }
+        senceAni();
+    }
+
+    _self.sence2step1 = function (callback) {
+        // console.log("sence2step1");
         _self.animeFlag = true;
         var box = sence[1].box;
         // _sence2doorInit();
@@ -319,6 +351,7 @@ var roadSence = function () {
                         people.css({ x: "4.5rem", y: "-1.45rem" })
                             .transition({ opacity: 1 }, function () {
                                 _self.animeFlag = false;
+                                if(callback) callback();
                             });
                     });
                 });
@@ -326,8 +359,8 @@ var roadSence = function () {
 
     }
 
-    _self.sence2step2 = function () {
-        console.log("sence2step2");
+    _self.sence2step2 = function (callback) {
+        // console.log("sence2step2");
         _self.animeFlag = true;
         var box = sence[1].box;
 
@@ -341,12 +374,13 @@ var roadSence = function () {
                     people.css({ x: "4.6rem", y: "-1rem" })
                         .transition({ opacity: 1 });
                     _self.animeFlag = false;
+                    if(callback) callback();
                 });
             });
     }
 
-    _self.sence2step3 = function () {
-        console.log("sence2step3");
+    _self.sence2step3 = function (callback) {
+        // console.log("sence2step3");
         _self.animeFlag = true;
         var box = sence[1].box;
 
@@ -363,6 +397,7 @@ var roadSence = function () {
                             people.transition({ x: "5.6rem", y: "-1rem" }, 700, "linear", function () {
                                 peopleDir.ur.ele.gifPause();
                                 _self.animeFlag = false;
+                                if(callback) callback();
                             });
                         })
 
@@ -370,8 +405,8 @@ var roadSence = function () {
             });
     }
 
-    _self.sence2step4 = function () {
-        console.log("sence2step4");
+    _self.sence2step4 = function (callback) {
+        // console.log("sence2step4");
         _self.animeFlag = true;
         var box = sence[1].box;
         var s = sence[1].children.eq(5);
@@ -391,14 +426,15 @@ var roadSence = function () {
                     people.transition({ x: "5.5rem", y: "-0.45rem" }, trfTime);
                     box.transition({ y: "9rem" }, trfTime, function () {
                         _self.animeFlag = false;
+                        if(callback) callback();
                     });
                 });
             });
         });
     }
 
-    _self.sence2step5 = function () {
-        console.log("sence2step5");
+    _self.sence2step5 = function (callback) {
+        // console.log("sence2step5");
         _self.animeFlag = true;
         var box = sence[1].box;
         var s = sence[1].children.eq(3);
@@ -418,14 +454,15 @@ var roadSence = function () {
                     people.transition({ x: "4.2rem", y: "-0.5rem" }, trfTime);
                     box.transition({ y: "11rem" }, trfTime, function () {
                         _self.animeFlag = false;
+                        if(callback) callback();
                     });
                 });
             });
         });
     }
 
-    _self.sence2step6 = function () {
-        console.log("sence2step6");
+    _self.sence2step6 = function (callback) {
+        // console.log("sence2step6");
         _self.animeFlag = true;
         var s = sence[1].children.eq(1);
 
@@ -453,6 +490,7 @@ var roadSence = function () {
                                     people.transition({ x: "4rem", y: "-3.7rem" }, 700, "linear", function () {
                                         peopleDir.ul.ele.gifPause();
                                         _self.animeFlag = false;
+                                        if(callback) callback();
                                     });
                                 })
 
@@ -462,8 +500,8 @@ var roadSence = function () {
         });
     }
 
-    _self.sence2step7 = function () {
-        console.log("sence2step7");
+    _self.sence2step7 = function (callback) {
+        // console.log("sence2step7");
         _self.animeFlag = true;
         var box = sence[1].box;
 
@@ -482,14 +520,15 @@ var roadSence = function () {
                             peopleDir.r.ele.gifPause();
                             peopleDir.u.ele.show();
                             _self.animeFlag = false;
+                            if(callback) callback();
                         });
                     })
             });
         })
     }
 
-    _self.sence2step8 = function () {
-        console.log("sence2step8");
+    _self.sence2step8 = function (callback) {
+        // console.log("sence2step8");
         _self.animeFlag = true;
         var box1 = sence[1].box;
         var box2 = sence[2].box;
@@ -513,12 +552,13 @@ var roadSence = function () {
                     bgArr[2].hide();
                     bgArr[3].hide();
                     _self.animeFlag = false;
+                    if(callback) callback();
                 });
             });
     }
 
-    _self.sence3step1 = function () {
-        console.log("sence3step1");
+    _self.sence3step1 = function (callback) {
+        // console.log("sence3step1");
         _self.animeFlag = true;
         // _sence3doorInit();
         peopleDir.u.ele.hide();
@@ -542,8 +582,8 @@ var roadSence = function () {
 
     }
 
-    _self.sence3step2 = function () {
-        console.log("sence3step2");
+    _self.sence3step2 = function (callback) {
+        // console.log("sence3step2");
         _self.animeFlag = true;
         var box = sence[2].box;
         var box2 = roadBox.find(".sence3sp");
@@ -576,8 +616,8 @@ var roadSence = function () {
 
     }
 
-    _self.sence3step3 = function () {
-        console.log("sence3step3");
+    _self.sence3step3 = function (callback) {
+        // console.log("sence3step3");
         _self.animeFlag = true;
         var s = sence[2].children.eq(4);
 
@@ -598,8 +638,8 @@ var roadSence = function () {
         })
     }
 
-    _self.sence3step4 = function () {
-        console.log("sence3step4");
+    _self.sence3step4 = function (callback) {
+        // console.log("sence3step4");
         _self.animeFlag = true;
         var box = sence[2].box;
         var box2 = roadBox.find(".sence3sp");
@@ -629,8 +669,8 @@ var roadSence = function () {
         });
     }
 
-    _self.sence3step5 = function () {
-        console.log("sence3step5");
+    _self.sence3step5 = function (callback) {
+        // console.log("sence3step5");
         _self.animeFlag = true;
 
         sence3door[2].gifResume();
@@ -651,7 +691,7 @@ var roadSence = function () {
     }
 
     _self.sence3step6 = function (callback) {
-        console.log("sence3step6");
+        // console.log("sence3step6");
         _self.animeFlag = true;
         var box1 = sence[2].box;
         var box2 = sence[3].box;
@@ -689,7 +729,7 @@ var roadSence = function () {
     }
 
     _self.sence4step1 = function (callback) {
-        console.log("sence4step1");
+        // console.log("sence4step1");
         _self.animeFlag = true;
         _self.animeFlag = true;
         var box = sence[3].box;
@@ -727,7 +767,7 @@ var roadSence = function () {
     }
 
     _self.sence4step2 = function (callback) {
-        console.log("sence4step2");
+        // console.log("sence4step2");
         _self.animeFlag = true;
         var box = sence[3].box;
         var d1 = sence[3].children.eq(4);
@@ -764,7 +804,7 @@ var roadSence = function () {
                             people.transition({ x: "5.6rem", y: "-1.2rem", opacity: 0 }, function () {
                                 peopleDir.u.ele.gifPause();
                                 _self.animeFlag = false;
-                                _self.sence4step3(function(){
+                                _self.sence4step3(function () {
                                     if (callback) callback();
                                 })
                             });
@@ -777,7 +817,7 @@ var roadSence = function () {
     }
 
     _self.sence4step3 = function (callback) {
-        console.log("sence4step3");
+        // console.log("sence4step3");
         _self.animeFlag = true;
         var box = sence[3].box;
         var rocket = sence[3].children.eq(1);
@@ -853,7 +893,7 @@ var roadSence = function () {
     /**
      * 火箭动画初始化
      */
-    function _rocketAnimeInit(){
+    function _rocketAnimeInit() {
         rocketAni = sence[3].box.find(".rocket");
         rocketAni.empty();
         rocketAni.gifOn({

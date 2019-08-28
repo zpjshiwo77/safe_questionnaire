@@ -394,7 +394,7 @@ $(document).ready(function () {
 	 * swiper初始化
 	 */
 	function swiperInit(index) {
-		console.log("swiperInit" + index);
+		// console.log("swiperInit" + index);
 		if (index == 1) {
 			var qaswiper1 = new Swiper('#qaswiper1', {
 				pagination: {
@@ -454,8 +454,14 @@ $(document).ready(function () {
 	 * 发送信息
 	 */
 	function sendInfo(baseInfo) {
-		console.log(baseInfo);
-		showResultBox();
+		var data = $.extend(baseInfo, answerInfo);
+		// console.log(data);
+		API.sendInfo(data, function (data) {
+			if (data.success || data.success == "true") {
+				showResultBox();
+			}
+			else icom.alert(data.msg);
+		})
 	}
 
 	/**
@@ -601,7 +607,7 @@ $(document).ready(function () {
 					setTimeout(function () {
 						showNextQuestion(val);
 					}, 500);
-					console.log(answerInfo);
+					// console.log(answerInfo);
 				}
 			}
 			else {
@@ -640,10 +646,30 @@ $(document).ready(function () {
 			});
 
 			showNextQuestion(val);
-			console.log(answerInfo);
+			// console.log(answerInfo);
 
 			nextBtnFlag = false;
 			setTimeout(function () { nextBtnFlag = true }, 1000);
+		}
+	}
+
+	/**
+	 * 特殊的场景转换
+	 */
+	function senceSpTransition() {
+		var type = icom.getQueryString('t');
+
+		if(type){
+			var anifunc = iroadSence["sence1step12"];
+			anifunc();
+			setTimeout(function(){
+				showNextTypeQs(3);
+			},53000);
+		}
+		else{
+			var anifunc = iroadSence["sence1step11"];
+			anifunc();
+			showNextTypeQs(3);
 		}
 	}
 
@@ -657,9 +683,7 @@ $(document).ready(function () {
 		}
 		else if (nowQSindex == 1 && nowQsitemIndex == 3) {
 			if (answerInfo.topic1_2 == "没有使用过移动支付") {
-				var anifunc = iroadSence["sence1step11"];
-				anifunc();
-				showNextTypeQs(3);
+				senceSpTransition();
 			}
 			else {
 				var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
@@ -711,11 +735,12 @@ $(document).ready(function () {
 	/**
 	 * 显示下一个大类的问题
 	 */
-	function showNextTypeQs(nextIndex) {
+	function showNextTypeQs(nextIndex,t) {
 		var prebox = QABox.find(".questionBox" + nowQSindex);
 		var nextbox = QABox.find(".questionBox" + nextIndex);
 		var title = QABox.find(".title");
 		var qs = nextbox.find(".qa1");
+		var time = t || 4000;
 		qs.show();
 
 		icom.fadeOut(prebox, 500, function () {
@@ -730,7 +755,7 @@ $(document).ready(function () {
 				nowQSindex = nextIndex;
 				nowQsitemIndex = 2;
 			});
-		}, 4000);
+		}, time);
 	}
 
 	/**
