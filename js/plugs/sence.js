@@ -764,7 +764,9 @@ var roadSence = function () {
                             people.transition({ x: "5.6rem", y: "-1.2rem", opacity: 0 }, function () {
                                 peopleDir.u.ele.gifPause();
                                 _self.animeFlag = false;
-                                if (callback) callback();
+                                _self.sence4step3(function(){
+                                    if (callback) callback();
+                                })
                             });
                         })
 

@@ -60,7 +60,7 @@ aside{
 	will-change:transform,opacity;
 }
 img{
-	/* pointer-events: none; */
+	pointer-events: none;
 }
 .coverMask{
 	z-index: 9;
@@ -90,6 +90,12 @@ img{
 }
 .swiper-pagination-bullet-active{
 	background-color: #f6d0a7;
+}
+#qaswiper2{
+	height: 4.8rem;
+}
+#qaswiper3{
+	height: 5rem;
 }
 /* public end */
 
@@ -592,6 +598,8 @@ img{
 	line-height: 1.1;
 	font-size: 0.46rem;
 	color: #fff;
+	text-align: justify;
+	padding-right: 0.4rem;
 }
 #QABox .question span{
 	font-size: 0.3rem;
@@ -614,10 +622,16 @@ img{
 	padding-top: 0.18rem;
 	box-sizing: border-box;
 	overflow: hidden;
-	font-size: 0.2rem;
+	font-size: 0.24rem;
+}
+#QABox .ansBox .ans.sp{
+	padding-top: 0.23rem
 }
 #QABox .two{
 	padding-top: 0.07rem!important;
+}
+#QABox .two.sp{
+	padding-top: 0.12rem!important;
 }
 #QABox .ansBox .next{
 	width: 2rem;
@@ -630,6 +644,14 @@ img{
 #QABox .ansBox .next.inline{
 	display: inline-block;
 }
+#QABox .title{
+	position: absolute;
+	top: 2.2rem;
+	left: 50%;
+	width: 6.59rem;
+	margin-left: -3.3rem;
+}
+
 #QABox .questionBox1 .tips{
 	display: block;
 	width: 3.62rem;
@@ -638,7 +660,7 @@ img{
 #QABox .questionBox1 .ans1{
 	width: 4.07rem;
 	background-image: url(../images/QABox/1/1.png);
-	margin: 0 0.5rem 0.1rem;
+	margin: 0 0.5rem;
 }
 #QABox .questionBox1 .ans1.act{
 	color: #02948a;
@@ -658,7 +680,7 @@ img{
 #QABox .questionBox1 .ans3{
 	width: 5rem;
 	background-image: url(../images/QABox/1/3.png);
-	margin: 0 0.5rem 0.1rem;
+	margin: 0 0.5rem;
 }
 #QABox .questionBox1 .ans3.act{
 	color: #02948a;
@@ -668,7 +690,7 @@ img{
 #QABox .questionBox1 .ans4{
 	width: 6.05rem;
 	background-image: url(../images/QABox/1/4.png);
-	margin: 0 0.5rem 0.1rem;
+	margin: 0 0.5rem;
 }
 #QABox .questionBox1 .ans4.act{
 	color: #02948a;
@@ -678,13 +700,97 @@ img{
 #QABox .questionBox1 .ans5{
 	width: 1.67rem;
 	background-image: url(../images/QABox/1/5.png);
-	margin: 0 0.1rem 0.1rem;
+	margin: 0 0.1rem;
 }
 #QABox .questionBox1 .ans5.act{
 	color: #02948a;
 	background-image: url(../images/QABox/1/5a.png);
 }
 
+#QABox .questionBox2 .ans1{
+	width: 2.94rem;
+	background-image: url(../images/QABox/2/1.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox2 .ans1.act{
+	color: #2670a1;
+	background-image: url(../images/QABox/2/1a.png);
+}
+
+#QABox .questionBox2 .ans2{
+	width: 4.99rem;
+	background-image: url(../images/QABox/2/2.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox2 .ans2.act{
+	color: #2670a1;
+	background-image: url(../images/QABox/2/2a.png);
+}
+
+#QABox .questionBox2 .ans3{
+	width: 5.69rem;
+	background-image: url(../images/QABox/2/3.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox2 .ans3.act{
+	color: #2670a1;
+	background-image: url(../images/QABox/2/3a.png);
+}
+
+#QABox .questionBox3 .tips{
+	display: block;
+	width: 4.57rem;
+	margin: 0 auto 0.3rem;
+}
+#QABox .questionBox3 .ans1{
+	width: 6.16rem;
+	background-image: url(../images/QABox/3/1.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox3 .ans1.act{
+	color: #41498e;
+	background-image: url(../images/QABox/3/1a.png);
+}
+
+#QABox .questionBox3 .ans2{
+	width: 2.68rem;
+	background-image: url(../images/QABox/3/2.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox3 .ans2.act{
+	color: #41498e;
+	background-image: url(../images/QABox/3/2a.png);
+}
+
+#QABox .questionBox3 .ans3{
+	width: 4.16rem;
+	background-image: url(../images/QABox/3/3.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox3 .ans3.act{
+	color: #41498e;
+	background-image: url(../images/QABox/3/3a.png);
+}
+
+#QABox .questionBox4 .ans1{
+	width: 3.09rem;
+	background-image: url(../images/QABox/4/1.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox4 .ans1.act{
+	color: #c44f4e;
+	background-image: url(../images/QABox/4/1a.png);
+}
+
+#QABox .questionBox4 .ans2{
+	width: 6.53rem;
+	background-image: url(../images/QABox/4/2.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox4 .ans2.act{
+	color: #c44f4e;
+	background-image: url(../images/QABox/4/2a.png);
+}
 /* QABox end */
 /*---------------------------------------- 15:9 ----------------------*/
 
