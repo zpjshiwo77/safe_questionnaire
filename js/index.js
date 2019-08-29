@@ -19,7 +19,7 @@ $(document).ready(function () {
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 			load_handler();
 		});
-		wxUser.init();
+		// wxUser.init();
 	}//edn func
 
 
@@ -291,7 +291,7 @@ $(document).ready(function () {
 	var nowQSindex = 1;
 	var nowQsitemIndex = 1;
 	var answerInfo = {};
-	var costSence = ["网购消费", "点外卖", "信用卡还款", "充值或购买游戏点卡等虚拟物品", "商场、便利店及餐饮类等中大型实体商户", "小摊贩、菜场、水果店等小型实体商店", "乘坐地铁、公交车、出租车", "停车场、ETC缴费", "挂号、买药等医院、医疗支付", "购买火车票、飞机票等", "购买电影票、门票", "公共缴费（水电煤/网费等）", "给他人转账汇款", "购买理财产品（包括股票，国债，基金，保险，P2P网贷等）"];
+	var costSence = ["商场、便利店及餐饮类等中大型实体商户", "小摊贩、菜场、水果店等小型实体商店", "乘坐地铁、公交车、出租车", "停车场、ETC缴费", "挂号、买药等医院、医疗支付"];
 	var choseSence = 0;
 
 	var baseInfoBoxScroll = new IScroll('#baseInfoBox', {
@@ -320,14 +320,14 @@ $(document).ready(function () {
 		// loadingBox.hide();
 		// QABox.show();
 
-		roadSenceInit();
-		senceAnimeTest();
-		QABox.show();
-		swiperInit();
+		// roadSenceInit();
+		// senceAnimeTest();
+		// QABox.show();
+		// swiperInit();
 
 		// baseQABoxShow();
 
-		// resultBox.show();
+		resultBox.show();
 	}
 
 	/**
@@ -792,7 +792,7 @@ $(document).ready(function () {
 			if (choseSence != 3) {
 				next.find(".ans").removeClass("act");
 				next.attr("data-qs", sence)
-				next.find(".question").html("在您消费过的线下支付场景中，假设您在购买" + sence + "消费了10次，您使用移动支付的次数占多少次：<span>（单选）</span>");
+				next.find(".question").html("假设您在购买" + sence + "消费了10次，您使用移动支付的次数占多少次：<span>（单选）</span>");
 				choseSence++;
 			}
 			icom.fadeIn(next, 500);

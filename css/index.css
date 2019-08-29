@@ -321,15 +321,15 @@ img{
 	position: absolute;
 	bottom: 0.5rem;
 	left: 50%;
-	width: 4.26rem;
-	height: 3.63rem;
-	margin-left: -2.13rem;
+	width: 4.35rem;
+	height: 3.98rem;
+	margin-left: -2.175rem;
 }
 #baseQABox .formBox input{
-	width: 4.26rem;
+	width: 4.35rem;
 	height: 0.83rem;
 	margin-bottom: 0.25rem;
-	padding: 0 0.22rem;
+	padding: 0 0.22rem 0 0.3rem;
 	font-size: 0.27rem;
 	line-height: 0.83rem;
 	font-family: zkwyt;
