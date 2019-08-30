@@ -197,7 +197,7 @@ img{
 	width: 3.75rem;
 	height: 0.22rem;
 	margin-left: -1.875rem;
-	-webkit-mask: url(../images/loadingBox/mask.png);
+	-webkit-mask: url(../images/loadingBox/mask.png?v=1);
 	-webkit-mask-size: 100% 100%;
 }
 #loadingBox .cont .bar{
@@ -626,20 +626,30 @@ img{
 	height: 0.7rem;
 	text-align: center;
 	color: #fff;
-	padding-top: 0.17rem;
+	padding-top: 0.15rem;
 	box-sizing: border-box;
 	overflow: hidden;
-	font-size: 0.24rem;
+	font-size: 0.3rem;
 	margin-bottom: 0.1rem!important;
+}
+#QABox .ansBox .ans.small{
+	padding-top: 0.21rem;
+	font-size: 0.24rem;
+	padding-top: 0.17rem;
 }
 #QABox .ansBox .ans.sp{
 	padding-top: 0.21rem
 }
-#QABox .two{
-	padding-top: 0.05rem!important;
+#QABox .ansBox .ans.two{
+	padding-top: 0.04rem;
+	font-size: 0.26rem;
 }
-#QABox .two.sp{
-	padding-top: 0.1rem!important;
+#QABox .ansBox .ans.two.small{
+	padding-top: 0.07rem;
+	font-size: 0.22rem;
+}
+#QABox .ansBox .ans.two.sp{
+	padding-top: 0.1rem;
 }
 #QABox .ansBox .next{
 	width: 2rem;
