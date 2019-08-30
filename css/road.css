@@ -70,6 +70,17 @@
     height: 7.85rem;
     overflow: hidden;
 }
+#roadBox .stairBox .stair{
+    width: 1.01rem;
+    height: 13.48rem;
+}
+.stairing{
+	-webkit-animation: stairing 10s linear infinite;
+}
+@-webkit-keyframes stairing{
+	0%{transform: translate(0, 0);}
+	100%{transform: translate(0, -5.63rem);}
+}
 
 #roadBox .senceBox {
     position: absolute;

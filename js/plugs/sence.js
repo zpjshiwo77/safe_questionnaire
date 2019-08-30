@@ -13,6 +13,8 @@ var roadSence = function (callback) {
     var sence2door = [];
     var sence3door = [];
     var rocketAni;
+    var type = icom.getQueryString('t') || "move";
+    var peopleMove = type == "move";
 
     _self.sence1step1 = function (callback) {
         // console.log("sence1step1");
@@ -243,6 +245,7 @@ var roadSence = function (callback) {
             peopleDir.ur.ele.gifPause();
             peopleDir.ur.ele.hide();
             peopleDir.u.ele.show();
+            if(peopleMove) peopleDir.u.ele.gifResume();
             bgArr[0].transition({ y: "100%" }, 2000, "linear");
             bgArr[1].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear");
             box1.css({ "z-index": 3 }).transition({ y: "20.5rem" }, 2000, "linear");
@@ -260,6 +263,7 @@ var roadSence = function (callback) {
                     bgArr[0].hide();
                     bgArr[1].hide();
                     _self.animeFlag = false;
+                    if(peopleMove) peopleDir.u.ele.gifPause();
                     if(callback) callback();
                 });
             });
@@ -282,7 +286,9 @@ var roadSence = function (callback) {
                         peopleDir.ur.ele.gifPause();
                         peopleDir.u.ele.show();
                         people.css({ x: "6rem", y: "-0.45rem" })
-                            .transition({ opacity: 1 });
+                            .transition({ opacity: 1 },function(){
+                                if(peopleMove) peopleDir.u.ele.gifResume();
+                            });
                         bgArr[0].transition({ y: "100%" }, 2000, "linear");
                         bgArr[7].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear", function () {
                             bgArr[7].transition({ y: "100%" }, 2000, "linear");
@@ -297,6 +303,7 @@ var roadSence = function (callback) {
                             box.hide();
                             bgArr[0].hide();
                             bgArr[7].hide();
+                            if(peopleMove) peopleDir.u.ele.gifPause();
                             _self.animeFlag = false;
                             if (callback) callback();
                         });
@@ -537,6 +544,7 @@ var roadSence = function (callback) {
         box1.css({ "z-index": 3 })
         stair.css({ y: "-0.5rem", opacity: 0, "z-index": 2 })
             .transition({ opacity: 1 }, function () {
+                if(peopleMove) peopleDir.u.ele.gifResume();
                 bgArr[2].transition({ y: "100%" }, 2000, "linear");
                 bgArr[3].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear", function () {
                     bgArr[3].transition({ y: "100%" }, 2000, "linear");
@@ -552,6 +560,7 @@ var roadSence = function (callback) {
                     bgArr[2].hide();
                     bgArr[3].hide();
                     _self.animeFlag = false;
+                    if(peopleMove) peopleDir.u.ele.gifPause();
                     if(callback) callback();
                 });
             });
@@ -706,7 +715,9 @@ var roadSence = function (callback) {
                     peopleDir.r.ele.hide();
                     peopleDir.u.ele.show();
                     people.css({ x: "5.9rem", y: "-0.7rem" })
-                        .transition({ opacity: 1 });
+                        .transition({ opacity: 1 },function(){
+                            if(peopleMove) peopleDir.u.ele.gifResume();
+                        });
                     bgArr[4].transition({ y: "100%" }, 2000, "linear");
                     bgArr[5].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear", function () {
                         bgArr[5].transition({ y: "100%" }, 2000, "linear");
@@ -720,6 +731,7 @@ var roadSence = function (callback) {
                         bgArr[5].hide();
                         stair.transition({ opacity: 0 });
                         _self.animeFlag = false;
+                        if(peopleMove) peopleDir.u.ele.gifPause();
                         if (callback) callback();
                     });
                 });
@@ -856,6 +868,7 @@ var roadSence = function (callback) {
 
         _peopleUiInit();
 
+        if(peopleMove) stair.find(".stair").removeClass("stairing");
     }
 
     /**
