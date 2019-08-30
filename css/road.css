@@ -1,3 +1,9 @@
+#roadBox{
+    left: -0.6rem;
+}
+#roadBox .bgBox{
+    left: 0.6rem;
+}
 #roadBox .bg1 {
     background-color: #03c2b2;
 }
@@ -69,7 +75,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 120%;
     height: 50%;
     /* overflow: hidden; */
     -webkit-mask: url(../images/road_sence/mask.png);
@@ -80,7 +86,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 7.5rem;
     height: 21.44rem;
 }
 
@@ -88,7 +94,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 7.5rem;
     height: 18.18rem;
 }
 #roadBox .senceBox .sence2 .door1{
@@ -162,7 +168,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 7.5rem;
     height: 13.82rem;
 }
 
@@ -209,7 +215,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 7.5rem;
     height: 10.43rem;
 }
 
@@ -329,7 +335,7 @@
 
 .cloudBox img:nth-child(3) {
     top: 21%;
-    -webkit-animation: clouding 13s 1.7 linear infinite;
+    -webkit-animation: clouding 13s 1.7s linear infinite;
 }
 
 .cloudBox img:nth-child(4) {
@@ -352,11 +358,11 @@
     -webkit-animation: clouding 13s 0.8s linear infinite;
 }
 
-.cloudBox img:nth-child(7) {
+.cloudBox img:nth-child(8) {
     top: 85%;
     -webkit-animation: clouding 15s 0.2s linear infinite;
 }
 @-webkit-keyframes clouding{
-	0%{transform: translate(0,0);}
+	0%{transform: translate(0.5rem,0);}
 	100%{transform: translate(-12rem,0);}
 }

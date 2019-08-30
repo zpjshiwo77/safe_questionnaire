@@ -43,11 +43,19 @@ $(document).ready(function () {
 		loader.addImage('images/loadingBox/c.png');
 		loader.addImage('images/loadingBox/l.png');
 		loader.addImage('images/loadingBox/mask.png');
-		loader.addImage('images/loadingBox/p.png');
 		loader.addImage('images/loadingBox/w.png');
+
+		for (var i = 0; i < 6; i++) {
+			loader.addImage('images/people/load/'+i+'.png');
+		}
 
 		loader.addCompletionListener(function () {
 			icom.fadeIn(articleBox);
+			loadingBox.find(".people").gifOn({
+				path: "images/people/load/",
+				num: 6,
+				speed: 150
+			});
 			load_more();
 			// loadingFlag = true;
 			// coinAnimeFlag = true;
@@ -300,6 +308,24 @@ $(document).ready(function () {
 		click: true
 	});
 
+	var qascroll1Scroll = new IScroll('#qascroll1', {
+		bounce: false,
+		scrollbars: true,
+		click: true
+	});
+
+	var qascroll2Scroll = new IScroll('#qascroll2', {
+		bounce: false,
+		scrollbars: true,
+		click: true
+	});
+
+	var qascroll3Scroll = new IScroll('#qascroll3', {
+		bounce: false,
+		scrollbars: true,
+		click: true
+	});
+
 	/**
 	 * 页面初始化
 	 */
@@ -323,7 +349,7 @@ $(document).ready(function () {
 		// roadSenceInit();
 		// senceAnimeTest();
 		// QABox.show();
-		// swiperInit();
+		// scrollRefresh();
 
 		// baseQABoxShow();
 
@@ -395,31 +421,12 @@ $(document).ready(function () {
 	}
 
 	/**
-	 * swiper初始化
+	 * 滚动刷新
 	 */
-	function swiperInit(index) {
-		// console.log("swiperInit" + index);
-		if (index == 1) {
-			var qaswiper1 = new Swiper('#qaswiper1', {
-				pagination: {
-					el: '.swiper-pagination',
-				},
-			})
-		}
-		else if (index == 2) {
-			var qaswiper2 = new Swiper('#qaswiper2', {
-				pagination: {
-					el: '.swiper-pagination',
-				},
-			})
-		}
-		else if (index == 3) {
-			var qaswiper3 = new Swiper('#qaswiper3', {
-				pagination: {
-					el: '.swiper-pagination',
-				},
-			})
-		}
+	function scrollRefresh(index) {
+		if (index == 1) qascroll1Scroll.refresh();
+		else if (index == 2) qascroll2Scroll.refresh();
+		else if (index == 3) qascroll3Scroll.refresh();
 	}
 
 	/**
@@ -755,7 +762,7 @@ $(document).ready(function () {
 		setTimeout(function () {
 			icom.fadeOut(title, 500, function () {
 				icom.fadeIn(nextbox);
-				if (nextIndex == 3) swiperInit(3);
+				if (nextIndex == 3) scrollRefresh(3);
 				nowQSindex = nextIndex;
 				nowQsitemIndex = 2;
 			});
@@ -809,10 +816,10 @@ $(document).ready(function () {
 		icom.fadeOut(Prev, 500, function () {
 			icom.fadeIn(next, 500);
 			if (nowQSindex == 1 && nowQsitemIndex == 9) {
-				swiperInit(1);
+				scrollRefresh(1);
 			}
 			else if (nowQSindex == 2 && nowQsitemIndex == 9) {
-				swiperInit(2);
+				scrollRefresh(2);
 			}
 		});
 	}

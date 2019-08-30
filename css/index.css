@@ -28,7 +28,6 @@ a, a:visited{
 section{
     width: 100%;
     height: 100%;
-    overflow: hidden;
     position: fixed;
     top:0;
     left: 0;
@@ -96,6 +95,41 @@ img{
 }
 #qaswiper3{
 	height: 5rem;
+}
+
+#qascroll1,#qascroll2,#qascroll3{
+	width: 98%;
+	height: 4.5rem;
+	overflow: hidden;
+}
+#qascroll2{
+	height: 4rem;
+}
+#qascroll3{
+	height: 3.8rem;
+}
+.qabox .bar{
+	position: absolute;
+	bottom: -0.05rem;
+	right: 0.1rem;
+	height: 4.6rem;
+	width: 0.15rem;
+	border: 1px solid #fff;
+}
+.qabox .bar4{
+	height: 4.1rem;
+}
+.qabox .bar3{
+	height: 3.9rem;
+}
+#qascroll1 .iScrollIndicator{
+	background: -webkit-linear-gradient(rgba(255,255,255,0.3), #03c2b2)!important;
+}
+#qascroll2 .iScrollIndicator{
+	background: -webkit-linear-gradient(rgba(255,255,255,0.3), #3c94cf)!important;
+}
+#qascroll3 .iScrollIndicator{
+	background: -webkit-linear-gradient(rgba(255,255,255,0.3), #4d58b4)!important;
 }
 /* public end */
 
@@ -182,7 +216,16 @@ img{
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 0.46rem;
+	width: 0.5rem;
+	height: 1rem;
+}
+#loadingBox .cont .peopleBox .people img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
 }
 #loadingBox .cont .peopleBox .coin{
 	position: absolute;
@@ -412,7 +455,7 @@ img{
 	padding: 0 0.4rem 0 0.2rem;
 }
 #baseInfoBox .ansBox{
-	width: 100%;
+	width: 7.5rem;
 	height: auto;
 	overflow: hidden;
 	margin-top: 0.1rem;
@@ -631,6 +674,7 @@ img{
 	overflow: hidden;
 	font-size: 0.3rem;
 	margin-bottom: 0.1rem!important;
+	cursor: pointer;
 }
 #QABox .ansBox .ans.small{
 	padding-top: 0.21rem;
@@ -655,6 +699,7 @@ img{
 	width: 2rem;
 	height: 0.59rem;
 	background-image: url(../images/QABox/next.png);
+	cursor: pointer;
 }
 #QABox .ansBox .next.center{
 	margin: 0.2rem 1.5rem;
