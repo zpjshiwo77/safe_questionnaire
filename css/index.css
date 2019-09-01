@@ -677,9 +677,12 @@ img{
 	cursor: pointer;
 }
 #QABox .ansBox .ans.small{
-	padding-top: 0.21rem;
 	font-size: 0.24rem;
 	padding-top: 0.17rem;
+}
+#QABox .ansBox .ans.mid{
+	font-size: 0.28rem;
+	padding-top: 0.18rem;
 }
 #QABox .ansBox .ans.sp{
 	padding-top: 0.21rem

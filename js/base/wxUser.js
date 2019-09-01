@@ -19,7 +19,7 @@ $(function () {
             title: '答题有奖，最高8888！',
             desc: '这可能是你做过的，获益最多的一套题',
             link: siteUrl,
-            imgUrl: siteUrl + 'images/share.jpg' + Math.random(),
+            imgUrl: siteUrl + 'images/share.jpg?v=' + Math.random(),
             type: 'link',
             success: function () { },
             cancel: function () { }
@@ -27,7 +27,7 @@ $(function () {
         window.wxDataTiemline = {
             title: '这可能是你做过的，获益最多的一套题',
             link: siteUrl,
-            imgUrl: siteUrl + 'images/share.jpg' + Math.random(),
+            imgUrl: siteUrl + 'images/share.jpg?v=' + Math.random(),
             type: 'link',
             success: function () { },
             cancel: function () { }
