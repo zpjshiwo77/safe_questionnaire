@@ -786,7 +786,7 @@ img{
 #QABox .questionBox1 .ans6{
 	width: 2.68rem;
 	background-image: url(../images/QABox/1/6.png);
-	margin: 0 0.2rem;
+	margin: 0 0.35rem;
 }
 #QABox .questionBox1 .ans6.act{
 	color: #02948a;
@@ -798,6 +798,8 @@ img{
 	height: 0.89rem;
 	background-image: url(../images/QABox/1/7.png);
 	margin: 0 0.2rem;
+	padding-top: 0.1rem!important;
+	line-height: 1.2;
 }
 #QABox .questionBox1 .ans7.act{
 	color: #02948a;
@@ -812,6 +814,16 @@ img{
 #QABox .questionBox1 .ans8.act{
 	color: #02948a;
 	background-image: url(../images/QABox/1/8a.png);
+}
+
+#QABox .questionBox1 .ans9{
+	width: 3.2rem;
+	background-image: url(../images/QABox/1/9.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox1 .ans9.act{
+	color: #02948a;
+	background-image: url(../images/QABox/1/9a.png);
 }
 
 #QABox .questionBox2 .ans1{
@@ -854,6 +866,16 @@ img{
 	background-image: url(../images/QABox/2/4a.png);
 }
 
+#QABox .questionBox2 .ans5{
+	width: 4.99rem;
+	background-image: url(../images/QABox/2/5.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox2 .ans5.act{
+	color: #2670a1;
+	background-image: url(../images/QABox/2/5a.png);
+}
+
 #QABox .questionBox3 .tips{
 	display: block;
 	width: 4.57rem;
@@ -887,6 +909,36 @@ img{
 #QABox .questionBox3 .ans3.act{
 	color: #41498e;
 	background-image: url(../images/QABox/3/3a.png);
+}
+
+#QABox .questionBox3 .ans4{
+	width: 3.5rem;
+	background-image: url(../images/QABox/3/4.png);
+	margin: 0 0.1rem;
+}
+#QABox .questionBox3 .ans4.act{
+	color: #41498e;
+	background-image: url(../images/QABox/3/4a.png);
+}
+
+#QABox .questionBox3 .ans5{
+	width: 6.16rem;
+	background-image: url(../images/QABox/3/5.png);
+	margin: 0 0.5rem;
+}
+#QABox .questionBox3 .ans5.act{
+	color: #41498e;
+	background-image: url(../images/QABox/3/5a.png);
+}
+
+#QABox .questionBox3 .ans6{
+	width: 2.68rem;
+	background-image: url(../images/QABox/3/6.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox3 .ans6.act{
+	color: #41498e;
+	background-image: url(../images/QABox/3/6a.png);
 }
 
 #QABox .questionBox4 .ans1{
