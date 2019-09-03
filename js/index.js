@@ -46,7 +46,7 @@ $(document).ready(function () {
 		loader.addImage('images/loadingBox/w.png');
 
 		for (var i = 0; i < 6; i++) {
-			loader.addImage('images/people/load/'+i+'.png');
+			loader.addImage('images/people/load/' + i + '.png');
 		}
 
 		loader.addCompletionListener(function () {
@@ -600,39 +600,63 @@ $(document).ready(function () {
 	 * 选择答案
 	 */
 	function choseAnswer() {
-		if (!iroadSence.animeFlag) {
+		if (!iroadSence.animeFlag && nextBtnFlag) {
 			var btn = $(this);
 			var box = btn.parents(".qabox");
 			var type = box.attr("data-type");
 			var val = box.attr("data-val");
 			var actBtn = box.find(".act");
+			var num = 1;
 
-			if (type == "single") {
-				if (actBtn.length == 0) {
-					btn.addClass("act");
-					if (val == "topic1_9") {
-						var qs = box.attr("data-qs");
-						answerInfo[val] += (answerInfo[val].length == 0 ? "" : "||") + qs + " - " + btn.text();
-					}
-					else answerInfo[val] = btn.text();
-					setTimeout(function () {
-						showNextQuestion(val);
-					}, 500);
-					// console.log(answerInfo);
-				}
+			// if (type == "single") {
+			// 	if (actBtn.length == 0) {
+			// 		btn.addClass("act");
+			// 		if (val == "topic1_9") {
+			// 			var qs = box.attr("data-qs");
+			// 			answerInfo[val] += (answerInfo[val].length == 0 ? "" : "||") + qs + " - " + btn.text();
+			// 		}
+			// 		else answerInfo[val] = btn.text();
+			// 		setTimeout(function () {
+			// 			showNextQuestion(val);
+			// 		}, 500);
+			// 		// console.log(answerInfo);
+			// 	}
+			// }
+			// else {
+			// 	if (btn.hasClass("act")) {
+			// 		btn.removeClass("act");
+			// 	}
+			// 	else if (type == "more3") {
+			// 		if (actBtn.length < 3) {
+			// 			btn.addClass("act");
+			// 		}
+			// 	}
+			// 	else {
+			// 		btn.addClass("act");
+			// 	}
+			// }
+
+			switch (type) {
+				case "single":
+					num = 1;
+					break;
+				case "more3":
+					num = 3;
+					break;
+				case "more":
+					num = 99;
+					break;
 			}
-			else {
-				if (btn.hasClass("act")) {
-					btn.removeClass("act");
-				}
-				else if (type == "more3") {
-					if (actBtn.length < 3) {
-						btn.addClass("act");
-					}
-				}
-				else {
-					btn.addClass("act");
-				}
+
+			if (btn.hasClass("act")) {
+				btn.removeClass("act");
+			}
+			else if(num == 1){
+				box.find(".ans").removeClass("act");
+				btn.addClass("act");
+			}
+			else if (actBtn.length < num) {
+				btn.addClass("act");
 			}
 		}
 	}
@@ -680,7 +704,7 @@ $(document).ready(function () {
 		else {
 			var anifunc = iroadSence["sence1step11"];
 			anifunc();
-			showNextTypeQs(3);
+			showNextTypeQs(3,7500);
 		}
 	}
 
@@ -697,10 +721,7 @@ $(document).ready(function () {
 				senceSpTransition();
 			}
 			else {
-				var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
-				anifunc();
 				showNormalNextQs();
-				nowQsitemIndex++;
 			}
 		}
 		else if (nowQSindex == 1 && nowQsitemIndex == 9) {
@@ -709,15 +730,12 @@ $(document).ready(function () {
 		else if (nowQSindex == 1 && nowQsitemIndex == 10) {
 			var anifunc = iroadSence["sence1step10"];
 			anifunc();
-			showNextTypeQs(nowQSindex + 1);
+			showNextTypeQs(nowQSindex + 1,5000);
 		}
 		else if (nowQSindex == 2 && nowQsitemIndex == 5) {
 			var num = (answerInfo.topic2_4.split("一")).length - 1;
 			if (num >= 3) $(".questionBox2 .qa5 .ans").eq(0).remove();
-			var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
-			anifunc();
 			showNormalNextQs();
-			nowQsitemIndex++;
 		}
 		else if (nowQSindex == 2 && nowQsitemIndex == 9) {
 			var anifunc = iroadSence["sence2step8"];
@@ -730,16 +748,13 @@ $(document).ready(function () {
 				var anifunc = iroadSence["sence4step1"];
 				anifunc();
 			});
-			showNextTypeQs(nowQSindex + 1);
+			showNextTypeQs(nowQSindex + 1,10000);
 		}
 		else if (nowQSindex == 4 && nowQsitemIndex == 2) {
 			showBaseInfoBox();
 		}
 		else {
-			var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
-			anifunc();
 			showNormalNextQs();
-			nowQsitemIndex++;
 		}
 	}
 
@@ -813,15 +828,22 @@ $(document).ready(function () {
 		var box = QABox.find(".questionBox" + nowQSindex);
 		var Prev = box.find(".qa" + (nowQsitemIndex - 1));
 		var next = box.find(".qa" + nowQsitemIndex);
-		icom.fadeOut(Prev, 500, function () {
-			icom.fadeIn(next, 500);
-			if (nowQSindex == 1 && nowQsitemIndex == 9) {
-				scrollRefresh(1);
-			}
-			else if (nowQSindex == 2 && nowQsitemIndex == 9) {
-				scrollRefresh(2);
-			}
+
+		var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
+		anifunc(function(){
+			nextBtnFlag = false;
+			icom.fadeOut(Prev, 300, function () {
+				icom.fadeIn(next, 300);
+				nextBtnFlag = true;
+				if (nowQSindex == 1 && nowQsitemIndex == 9) {
+					scrollRefresh(1);
+				}
+				else if (nowQSindex == 2 && nowQsitemIndex == 9) {
+					scrollRefresh(2);
+				}
+			});
 		});
+		nowQsitemIndex++;		
 	}
 
 	/**
