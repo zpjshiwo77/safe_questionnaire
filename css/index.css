@@ -108,6 +108,20 @@ img{
 #qascroll3{
 	height: 3.8rem;
 }
+.scrollAR{
+	position: absolute;
+	bottom: -0.5rem;
+	left: 50%;
+	width: 0.5rem;
+	height: 0.5rem;
+	margin-left: -0.25rem;
+	background-image: url(../images/common/ar.png);
+	background-size: 100%;
+	-webkit-animation: updowning 1s ease infinite;
+}
+#baseQABox .scrollAR{
+	bottom: 4.7rem;
+}
 .qabox .bar{
 	position: absolute;
 	bottom: -0.05rem;
@@ -170,6 +184,15 @@ img{
 	0%{transform: scale(1,1);}
 	50%{transform: scale(1.1,1.1);}
 	100%{transform: scale(1,1);}
+}
+
+.updowning{
+	-webkit-animation: updowning 2s ease infinite;
+}
+@-webkit-keyframes updowning{
+	0%{transform: translate(0,0);}
+	50%{transform: translate(0,0.1rem);}
+	100%{transform: translate(0,0);}
 }
 /* anime end */
 
@@ -390,14 +413,14 @@ img{
 	position: absolute;
 	top: 0.5rem;
 	left: 0.6rem;
-	bottom: 4.9rem;
+	bottom: 5.4rem;
 	right: 0.3rem;
 	overflow: hidden;
 }
 #baseQABox .bar{
 	position: absolute;
 	top: 0.495rem;
-	bottom: 4.85rem;
+	bottom: 5.35rem;
 	right: 0.25rem;
 	left: 7.1rem;
 	border: 1px solid #fff;
@@ -869,5 +892,16 @@ img{
 }
 /* QABox end */
 /*---------------------------------------- 15:9 ----------------------*/
-
+.screen159 #baseQABox .baseInfoBox{
+	bottom: 5.2rem;
+}
+.screen159 #baseQABox .bar{
+	bottom: 5.15rem;
+}
 /*---------------------------------------- 18:9 ----------------------*/
+.screen189 #baseQABox .baseInfoBox{
+	bottom: 5.2rem;
+}
+.screen189 #baseQABox .bar{
+	bottom: 5.15rem;
+}
