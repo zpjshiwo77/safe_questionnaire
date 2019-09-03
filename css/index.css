@@ -695,31 +695,18 @@ img{
 	padding-top: 0.15rem;
 	box-sizing: border-box;
 	overflow: hidden;
-	font-size: 0.3rem;
+	font-size: 0.28rem;
 	margin-bottom: 0.1rem!important;
 	cursor: pointer;
 }
-#QABox .ansBox .ans.small{
-	font-size: 0.24rem;
-	padding-top: 0.17rem;
+#QABox .ansBox .ans.two{
+	padding-top: 0.07rem;
 }
-#QABox .ansBox .ans.mid{
-	font-size: 0.28rem;
-	padding-top: 0.18rem;
+#QABox .ansBox .ans.two.sp{
+	padding-top: 0.07rem;
 }
 #QABox .ansBox .ans.sp{
 	padding-top: 0.21rem
-}
-#QABox .ansBox .ans.two{
-	padding-top: 0.04rem;
-	font-size: 0.26rem;
-}
-#QABox .ansBox .ans.two.small{
-	padding-top: 0.07rem;
-	font-size: 0.22rem;
-}
-#QABox .ansBox .ans.two.sp{
-	padding-top: 0.1rem;
 }
 #QABox .ansBox .next{
 	width: 2rem;
@@ -794,6 +781,37 @@ img{
 #QABox .questionBox1 .ans5.act{
 	color: #02948a;
 	background-image: url(../images/QABox/1/5a.png);
+}
+
+#QABox .questionBox1 .ans6{
+	width: 2.68rem;
+	background-image: url(../images/QABox/1/6.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox1 .ans6.act{
+	color: #02948a;
+	background-image: url(../images/QABox/1/6a.png);
+}
+
+#QABox .questionBox1 .ans7{
+	width: 5rem;
+	height: 0.89rem;
+	background-image: url(../images/QABox/1/7.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox1 .ans7.act{
+	color: #02948a;
+	background-image: url(../images/QABox/1/7a.png);
+}
+
+#QABox .questionBox1 .ans8{
+	width: 5.7rem;
+	background-image: url(../images/QABox/1/8.png);
+	margin: 0 0.2rem;
+}
+#QABox .questionBox1 .ans8.act{
+	color: #02948a;
+	background-image: url(../images/QABox/1/8a.png);
 }
 
 #QABox .questionBox2 .ans1{
