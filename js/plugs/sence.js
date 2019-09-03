@@ -585,6 +585,7 @@ var roadSence = function (callback) {
                     people.css({ x: "4.2rem", y: "-2.1rem" })
                         .transition({ opacity: 1 }, function () {
                             _self.animeFlag = false;
+                            if(callback) callback();
                         });
                 });
             })
@@ -617,6 +618,7 @@ var roadSence = function (callback) {
                                 peopleDir.ul.ele.hide();
                                 peopleDir.ur.ele.show();
                                 _self.animeFlag = false;
+                                if(callback) callback();
                             });
                         });
                     })
@@ -642,6 +644,7 @@ var roadSence = function (callback) {
                     peopleDir.r.ele.gifPause();
                     peopleDir.u.ele.show();
                     _self.animeFlag = false;
+                    if(callback) callback();
                 });
             });
         })
@@ -670,6 +673,7 @@ var roadSence = function (callback) {
                             box2.transition({ y: "8.5rem" }, trfTime, "linear");
                             people.transition({ x: "4.2rem", y: "-0.5rem" }, trfTime, "linear", function () {
                                 _self.animeFlag = false;
+                                if(callback) callback();
                                 box2.hide();
                             });
                         });
@@ -694,6 +698,7 @@ var roadSence = function (callback) {
                     people.transition({ x: "4.2rem", y: "-2.3rem" }, 1100, "linear", function () {
                         peopleDir.r.ele.gifPause();
                         _self.animeFlag = false;
+                        if(callback) callback();
                     })
                 })
         });
