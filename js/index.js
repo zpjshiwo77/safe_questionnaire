@@ -669,7 +669,7 @@ $(document).ready(function () {
 			if (btn.hasClass("act")) {
 				btn.removeClass("act");
 			}
-			else if(num == 1){
+			else if (num == 1) {
 				box.find(".ans").removeClass("act");
 				btn.addClass("act");
 			}
@@ -695,7 +695,11 @@ $(document).ready(function () {
 			}
 
 			actBtn.each(function () {
-				answerInfo[val] += (answerInfo[val].length == 0 ? "" : "||") + $(this).text();
+				if (val == "topic1_9") {
+					var qs = box.attr("data-qs");
+					answerInfo[val] += (answerInfo[val].length == 0 ? "" : "||") + qs + " - " + $(this).text();
+				}
+				else answerInfo[val] += (answerInfo[val].length == 0 ? "" : "||") + $(this).text();
 			});
 
 			showNextQuestion(val);
@@ -722,7 +726,7 @@ $(document).ready(function () {
 		else {
 			var anifunc = iroadSence["sence1step11"];
 			anifunc();
-			showNextTypeQs(3,7500);
+			showNextTypeQs(3, 7500);
 		}
 	}
 
@@ -748,7 +752,7 @@ $(document).ready(function () {
 		else if (nowQSindex == 1 && nowQsitemIndex == 10) {
 			var anifunc = iroadSence["sence1step10"];
 			anifunc();
-			showNextTypeQs(nowQSindex + 1,5000);
+			showNextTypeQs(nowQSindex + 1, 5000);
 		}
 		else if (nowQSindex == 2 && nowQsitemIndex == 5) {
 			var num = (answerInfo.topic2_4.split("一")).length - 1;
@@ -766,7 +770,7 @@ $(document).ready(function () {
 				var anifunc = iroadSence["sence4step1"];
 				anifunc();
 			});
-			showNextTypeQs(nowQSindex + 1,10000);
+			showNextTypeQs(nowQSindex + 1, 10000);
 		}
 		else if (nowQSindex == 4 && nowQsitemIndex == 2) {
 			showBaseInfoBox();
@@ -848,7 +852,7 @@ $(document).ready(function () {
 		var next = box.find(".qa" + nowQsitemIndex);
 
 		var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
-		anifunc(function(){
+		anifunc(function () {
 			nextBtnFlag = false;
 			icom.fadeOut(Prev, 300, function () {
 				icom.fadeIn(next, 300);
@@ -861,7 +865,7 @@ $(document).ready(function () {
 				}
 			});
 		});
-		nowQsitemIndex++;		
+		nowQsitemIndex++;
 	}
 
 	/**
