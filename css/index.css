@@ -115,7 +115,7 @@ img{
 	width: 0.5rem;
 	height: 0.5rem;
 	margin-left: -0.25rem;
-	background-image: url(../images/common/ar.png);
+	background-image: url(../images/common/ar.png?v=1);
 	background-size: 100%;
 	-webkit-animation: updowning 1s ease infinite;
 }
@@ -558,7 +558,7 @@ img{
 	right: -0.3rem;
 	width: 0.14rem;
 	height: 0.12rem;
-	background-image: url(../images/chose/ar.png);
+	background-image: url(../images/chose/ar.png?v=1);
 	background-size: 100%;
 }
 #baseInfoBox .box{

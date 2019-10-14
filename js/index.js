@@ -471,7 +471,7 @@ $(document).ready(function () {
 		else if (baseInfo.birthday == "") icom.alert("请选择出生年月");
 		else if (baseInfo.education == "") icom.alert("请选择学历");
 		else if (baseInfo.occupation == "") icom.alert("请选择职业");
-		else if (baseInfo.city == "") icom.alert("请选择城市");
+		else if (baseInfo.city == "请选择") icom.alert("请选择城市");
 		else if (baseInfo.maritalStatus == "") icom.alert("请选择婚姻状态");
 		else if (baseInfo.isChildren == "") icom.alert("请选择是否有小孩");
 		else if (baseInfo.income == "") icom.alert("请选择可支配收入");
@@ -852,7 +852,7 @@ $(document).ready(function () {
 		var next = box.find(".qa" + nowQsitemIndex);
 
 		var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
-		anifunc(function () {
+	nowQsitemIndex++;	anifunc(function () {
 			nextBtnFlag = false;
 			icom.fadeOut(Prev, 300, function () {
 				icom.fadeIn(next, 300);
@@ -865,7 +865,7 @@ $(document).ready(function () {
 				}
 			});
 		});
-		nowQsitemIndex++;
+		
 	}
 
 	/**
