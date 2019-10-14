@@ -1,0 +1,61 @@
+* {
+	-webkit-overflow-scrolling: touch;
+}
+@font-face {
+	font-family: 'FZY4JWGB10';
+	src: url('../font/FZY4JWGB10.eot');
+	src: url('../font/FZY4JWGB10.eot') format('embedded-opentype'), url('../font/FZY4JWGB10.woff2') format('woff2'), url('../font/FZY4JWGB10.woff') format('woff'), url('../font/FZY4JWGB10.ttf') format('truetype'), url('../font/FZY4JWGB10.svg#FZY4JWGB10') format('svg');
+}
+body {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	font-family: "FZY4JWGB10", "microsoft yahei";
+	overflow: hidden;
+}
+ul, li, img {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+em {
+	font-style: normal;
+}
+a, li {
+	-webkit-tap-highlight-color: rgba(255,0,0,0);/*手机端页面去除a标签点击时的蓝色边框*/
+	text-decoration: none;
+}
+input, label, textarea {
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+}
+p, h2, h3 {
+	font-weight: normal;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+}
+button {
+	/*消除button的默认样式*/
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: 1px solid transparent;/*自定义边框*/
+	-webkit-tap-highlight-color: rgba(255,0,0,0);/*消除默认点击蓝色边框效果*/
+	text-decoration: none;
+}
+.hdt {
+	text-indent: -9999em;
+	overflow: hidden;
+}
+.hide {
+	display: none;
+}
+.container {
+	width: 100vw;
+	height: 100vh;
+	font-size: 2em;
+	background: #bddefc;
+	overflow: hidden;
+	position: relative;
+}
