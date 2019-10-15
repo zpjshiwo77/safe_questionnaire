@@ -425,7 +425,7 @@
 	 */
 	function showBaseInfoBox() {
 		var title = QABox.find(".title");
-		icom.fadeOut($(".questionBox4"), 500, function () {
+		icom.fadeOut($(".questionBox4"), 200, function () {
 			title[0].src = "images/QABox/t5.png";
 			icom.fadeIn(title);
 		});
@@ -446,9 +446,9 @@
 		else if (index == 2) qascroll2Scroll.refresh();
 		else if (index == 3) qascroll3Scroll.refresh();
 
-		roadBox.find(".senceBox").css({opacity:0.3});
-		roadBox.find(".peopleBox").css({opacity:0.3});
-		roadBox.find(".sence3sp").css({opacity:0.3});
+		roadBox.find(".senceBox").css({ opacity: 0.3 });
+		roadBox.find(".peopleBox").css({ opacity: 0.3 });
+		roadBox.find(".sence3sp").css({ opacity: 0.3 });
 	}
 
 	/**
@@ -472,8 +472,8 @@
 		if (baseInfo.name == "") icom.alert("请输入姓名");
 		else if (!icom.checkStr(baseInfo.phone)) icom.alert("请输入正确的手机号");
 		else if (baseInfo.sex == "") icom.alert("请选择性别");
-		else if (baseInfo.birthday == "") icom.alert("请选择出生年月");
-		else if (baseInfo.education == "") icom.alert("请选择学历");
+		else if (baseInfo.birthday == "请选择") icom.alert("请选择出生年月");
+		else if (baseInfo.education == "请选择") icom.alert("请选择学历");
 		else if (baseInfo.occupation == "") icom.alert("请选择职业");
 		else if (baseInfo.city == "请选择") icom.alert("请选择城市");
 		else if (baseInfo.maritalStatus == "") icom.alert("请选择婚姻状态");
@@ -520,31 +520,33 @@
 	 */
 	function changeMarriageItem() {
 		var year = parseInt($("#birthday").val());
-		var sex = $("#sex").find(".act").text();
-		var item = $("#marriage").children();
-		item.removeClass('act');
-		if (year >= 1999) {
-			item.eq(1).hide();
-			item.eq(2).hide();
+		if (year != "请选择") {
+			var sex = $("#sex").find(".act").text();
+			var item = $("#marriage").children();
+			item.removeClass('act');
+			if (year >= 1999) {
+				item.eq(1).hide();
+				item.eq(2).hide();
+			}
+			else if (year >= 1997 && sex == "男") {
+				item.eq(1).hide();
+				item.eq(2).hide();
+			}
+			else {
+				item.eq(1).show();
+				item.eq(2).show();
+			}
+			baseInfoBoxScroll.refresh();
 		}
-		else if (year >= 1997 && sex == "男") {
-			item.eq(1).hide();
-			item.eq(2).hide();
-		}
-		else {
-			item.eq(1).show();
-			item.eq(2).show();
-		}
-		baseInfoBoxScroll.refresh();
 	}
 
 	/**
 	 * 年份选择初始化
 	 */
 	function yearSelectInit() {
-		var cont = '';
+		var cont = '<option value="请选择">请选择</option>';
 		for (var i = 1939; i <= 2009; i++) {
-			cont += '<option value="' + i + '" ' + (i == 1980 ? 'selected' : '') + '>' + i + '</option>'
+			cont += '<option value="' + i + '" >' + i + '</option>'
 		}
 		$("#birthday").append(cont);
 	}
@@ -783,9 +785,9 @@
 			showNormalNextQs();
 		}
 
-		roadBox.find(".senceBox").css({opacity:1});
-		roadBox.find(".peopleBox").css({opacity:1});
-		roadBox.find(".sence3sp").css({opacity:1});
+		roadBox.find(".senceBox").css({ opacity: 1 });
+		roadBox.find(".peopleBox").css({ opacity: 1 });
+		roadBox.find(".sence3sp").css({ opacity: 1 });
 	}
 
 	/**
@@ -860,7 +862,7 @@
 		var next = box.find(".qa" + nowQsitemIndex);
 
 		var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
-	nowQsitemIndex++;	anifunc(function () {
+		nowQsitemIndex++; anifunc(function () {
 			nextBtnFlag = false;
 			icom.fadeOut(Prev, 200, function () {
 				icom.fadeIn(next, 200);
@@ -873,7 +875,7 @@
 				}
 			});
 		});
-		
+
 	}
 
 	/**

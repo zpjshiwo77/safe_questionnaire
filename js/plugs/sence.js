@@ -839,8 +839,9 @@ var roadSence = function (callback) {
         var box = sence[3].box;
         var rocket = sence[3].children.eq(1);
         _rocketAnimeInit();
-        box.transition({ y: "9rem" }, trfTime, "linear");
-        rocket.transition({ y: "-9rem" }, trfTime * 3, "linear", function () {
+        people.hide();
+        box.transition({ y: "9rem" }, 600, "linear");
+        rocket.transition({ y: "-9rem" }, 600 * 3, "linear", function () {
             _self.animeFlag = false;
             if (callback) callback();
         });
