@@ -99,15 +99,16 @@ img{
 
 #qascroll1,#qascroll2,#qascroll3{
 	width: 98%;
-	height: 4.5rem;
+	height: 7.5rem;
 	overflow: hidden;
+	position: relative;
 }
-#qascroll2{
+/* #qascroll2{
 	height: 4rem;
 }
 #qascroll3{
 	height: 3.8rem;
-}
+} */
 .scrollAR{
 	position: absolute;
 	bottom: -0.5rem;
@@ -126,16 +127,16 @@ img{
 	position: absolute;
 	bottom: -0.05rem;
 	right: 0.1rem;
-	height: 4.6rem;
+	height: 86%;
 	width: 0.15rem;
 	border: 1px solid #fff;
 }
-.qabox .bar4{
+/* .qabox .bar4{
 	height: 4.1rem;
 }
 .qabox .bar3{
 	height: 3.9rem;
-}
+} */
 #qascroll1 .iScrollIndicator{
 	background: -webkit-linear-gradient(rgba(255,255,255,0.3), #03c2b2)!important;
 }
@@ -617,7 +618,7 @@ img{
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 50%;
+	height: 100%;
 }
 #QABox .qabox{
 	position: absolute;
@@ -684,6 +685,7 @@ img{
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+	padding-top: 0.1rem;
 }
 #QABox .ansBox .ans{
 	/* display: inline-block; */
@@ -696,8 +698,9 @@ img{
 	box-sizing: border-box;
 	overflow: hidden;
 	font-size: 0.28rem;
-	margin-bottom: 0.1rem!important;
+	margin-bottom: 0.2rem!important;
 	cursor: pointer;
+	transform: scale(1.1,1.1);
 }
 #QABox .ansBox .ans.two{
 	padding-top: 0.07rem;
@@ -708,7 +711,7 @@ img{
 #QABox .ansBox .ans.sp{
 	padding-top: 0.21rem
 }
-#QABox .ansBox .next{
+#QABox .next{
 	width: 2rem;
 	height: 0.59rem;
 	background-image: url(../images/QABox/next.png);
@@ -716,6 +719,9 @@ img{
 }
 #QABox .ansBox .next.center{
 	margin: 0.2rem 1.5rem;
+}
+#QABox .next.center{
+	margin: 0.4rem auto 0.2rem;
 }
 #QABox .ansBox .next.inline{
 	/* display: inline-block; */
@@ -915,6 +921,7 @@ img{
 	width: 3.5rem;
 	background-image: url(../images/QABox/3/4.png);
 	margin: 0 0.1rem;
+	transform: scale(1,1);
 }
 #QABox .questionBox3 .ans4.act{
 	color: #41498e;
@@ -968,10 +975,16 @@ img{
 .screen159 #baseQABox .bar{
 	bottom: 5.15rem;
 }
+.screen189 #qascroll1,.screen189 #qascroll2,.screen189 #qascroll3{
+	height: 6.5rem;
+}
 /*---------------------------------------- 18:9 ----------------------*/
 .screen189 #baseQABox .baseInfoBox{
 	bottom: 5.2rem;
 }
 .screen189 #baseQABox .bar{
 	bottom: 5.15rem;
+}
+.screen189 #qascroll1,.screen189 #qascroll2,.screen189 #qascroll3{
+	height: 9.6rem;
 }
