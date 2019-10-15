@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
 
 	//-----------------------------------------定义和初始化变量----------------------------------------
 	var loadBox = $('aside.loadBox');
@@ -445,10 +445,6 @@ $(document).ready(function () {
 		if (index == 1) qascroll1Scroll.refresh();
 		else if (index == 2) qascroll2Scroll.refresh();
 		else if (index == 3) qascroll3Scroll.refresh();
-
-		roadBox.find(".senceBox").css({opacity:0.3});
-		roadBox.find(".peopleBox").css({opacity:0.3});
-		roadBox.find(".sence3sp").css({opacity:0.3});
 	}
 
 	/**
@@ -710,7 +706,7 @@ $(document).ready(function () {
 			// console.log(answerInfo);
 
 			nextBtnFlag = false;
-			setTimeout(function () { nextBtnFlag = true }, 400);
+			setTimeout(function () { nextBtnFlag = true }, 1000);
 		}
 	}
 
@@ -782,10 +778,6 @@ $(document).ready(function () {
 		else {
 			showNormalNextQs();
 		}
-
-		roadBox.find(".senceBox").css({opacity:1});
-		roadBox.find(".peopleBox").css({opacity:1});
-		roadBox.find(".sence3sp").css({opacity:1});
 	}
 
 	/**
@@ -796,16 +788,16 @@ $(document).ready(function () {
 		var nextbox = QABox.find(".questionBox" + nextIndex);
 		var title = QABox.find(".title");
 		var qs = nextbox.find(".qa1");
-		var time = 1500;
+		var time = t || 4000;
 		qs.show();
 
-		icom.fadeOut(prebox, 200, function () {
+		icom.fadeOut(prebox, 500, function () {
 			title[0].src = "images/QABox/t" + nextIndex + ".png";
 			icom.fadeIn(title);
 		})
 
 		setTimeout(function () {
-			icom.fadeOut(title, 200, function () {
+			icom.fadeOut(title, 500, function () {
 				icom.fadeIn(nextbox);
 				if (nextIndex == 3) scrollRefresh(3);
 				nowQSindex = nextIndex;
@@ -840,14 +832,14 @@ $(document).ready(function () {
 			var Prev = box.find(".qa" + (nowQsitemIndex - 1));
 			var next = box.find(".qa" + nowQsitemIndex);
 		}
-		icom.fadeOut(Prev, 200, function () {
+		icom.fadeOut(Prev, 500, function () {
 			if (choseSence != 3) {
 				next.find(".ans").removeClass("act");
 				next.attr("data-qs", sence)
 				next.find(".question").html("假设您在购买" + sence + "消费了10次，您使用移动支付的次数占多少次：<span>（单选）</span>");
 				choseSence++;
 			}
-			icom.fadeIn(next, 200);
+			icom.fadeIn(next, 500);
 		});
 	}
 
@@ -862,8 +854,8 @@ $(document).ready(function () {
 		var anifunc = iroadSence["sence" + nowQSindex + "step" + (nowQsitemIndex - 1)];
 	nowQsitemIndex++;	anifunc(function () {
 			nextBtnFlag = false;
-			icom.fadeOut(Prev, 200, function () {
-				icom.fadeIn(next, 200);
+			icom.fadeOut(Prev, 300, function () {
+				icom.fadeIn(next, 300);
 				nextBtnFlag = true;
 				if (nowQSindex == 1 && nowQsitemIndex == 9) {
 					scrollRefresh(1);
@@ -895,12 +887,13 @@ $(document).ready(function () {
 		var airship = indexBox.find(".airship");
 		var startBtn = indexBox.find(".startBtn");
 
-		startAnswerFlag = true;
 		indexBox.show();
 		title.css({ scale: 0 })
 			.transition({ scale: 1, opacity: 1 }, 800);
 		sence.transition({ opacity: 1, delay: 600 }, 700);
-		startBtn.transition({ opacity: 1, delay: 1100 }, 700);
+		startBtn.transition({ opacity: 1, delay: 1100 }, 700, function () {
+			startAnswerFlag = true;
+		});
 
 		airship.gifOn({
 			path: "images/indexBox/airship/",

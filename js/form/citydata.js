@@ -1,4 +1,8 @@
 var cityData = [{
+	value: '000000',
+	label: '请选择',
+	children: []
+},{
 	value: '110000',
 	label: '北京',
 	children: [{

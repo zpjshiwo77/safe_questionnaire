@@ -155,7 +155,13 @@ a.bgmStop{ background-image: url(../images/common/bgm_off.png);}
 
 /* iphoneX 竖屏底下的安全高度 */
 .iphoneXFullPortrait{ height: calc( 100% - 0.7rem );}
-
+.otherpcss{position: absolute;
+    bottom: -1.3rem;
+    left: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: -0.25rem;
+    color: white;}
 /* 初始化标签*/
 body{ background-color:#000; color: #000;}
 a,a:hover{ color: #000;}

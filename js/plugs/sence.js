@@ -9,7 +9,7 @@ var roadSence = function (callback) {
     var stair = roadBox.find(".stairBox");
     var people = roadBox.find(".peopleBox");
     var peopleDir = {};
-    var trfTime = 0;
+    var trfTime = 1000;
     var sence2door = [];
     var sence3door = [];
     var rocketAni;
@@ -22,13 +22,13 @@ var roadSence = function (callback) {
         var box = sence[0].box;
 
         peopleDir.u.ele.gifResume();
-        people.transition({ x: "3.9rem", y: "-2.7rem", opacity: 0 },0, function () {
+        people.transition({ x: "3.9rem", y: "-2.7rem", opacity: 0 }, function () {
             box.transition({ y: "2.5rem" }, trfTime, function () {
                 peopleDir.u.ele.hide();
                 peopleDir.u.ele.gifPause();
                 peopleDir.ur.ele.show();
                 people.css({ x: "2.7rem", y: "-2.8rem" })
-                    .transition({ opacity: 1 }, 0,function () {
+                    .transition({ opacity: 1 }, function () {
                         _self.animeFlag = false;
                         if(callback) callback();
                     });
@@ -43,25 +43,25 @@ var roadSence = function (callback) {
         var s = sence[0].children.eq(5);
 
         peopleDir.ur.ele.gifResume();
-        people.transition({ x: "4.3rem", y: "-3.4rem" }, 0, "linear")
-            .transition({ x: "4.4rem", y: "-3.5rem", opacity: 0 },0);
-        s.transition({ opacity: 1, delay: 0 },0);
-        box.transition({ y: "4.5rem", delay: 0 }, trfTime, function () {
+        people.transition({ x: "4.3rem", y: "-3.4rem" }, 1000, "linear")
+            .transition({ x: "4.4rem", y: "-3.5rem", opacity: 0 });
+        s.transition({ opacity: 1, delay: 1500 });
+        box.transition({ y: "4.5rem", delay: 1500 }, trfTime, function () {
             peopleDir.ur.ele.hide();
             peopleDir.ur.ele.gifPause();
             peopleDir.ul.ele.show();
             peopleDir.ul.ele.gifResume();
-            people.css({ x: "3.9rem", y: "-3.2rem" },0)
-                .transition({ opacity: 1 },0)
-                .transition({ x: "3.3rem", y: "-3.5rem" }, 0, "linear")
-                .transition({ x: "3.2rem", y: "-3.55rem", opacity: 0 },0, function () {
+            people.css({ x: "3.9rem", y: "-3.2rem" })
+                .transition({ opacity: 1 })
+                .transition({ x: "3.3rem", y: "-3.5rem" }, 500, "linear")
+                .transition({ x: "3.2rem", y: "-3.55rem", opacity: 0 }, function () {
                     peopleDir.ul.ele.hide();
                     peopleDir.ul.ele.gifPause();
                     peopleDir.r.ele.show();
                     peopleDir.r.ele.gifResume();
                     people.css({ x: "3.5rem", y: "-4.7rem" })
-                        .transition({ opacity: 1 },0)
-                        .transition({ x: "5rem", y: "-3.8rem" }, 0, "linear", function () {
+                        .transition({ opacity: 1 })
+                        .transition({ x: "5rem", y: "-3.8rem" }, 1000, "linear", function () {
                             peopleDir.r.ele.hide();
                             peopleDir.r.ele.gifPause();
                             peopleDir.ur.ele.show();
@@ -79,9 +79,9 @@ var roadSence = function (callback) {
         var s = sence[0].children.eq(4);
         var s2 = sence[0].children.eq(3);
 
-        s.transition({ opacity: 1 },0);
+        s.transition({ opacity: 1 });
         peopleDir.ur.ele.gifResume();
-        people.transition({ x: "6.6rem", y: "-4.8rem" }, 0, "linear", function () {
+        people.transition({ x: "6.6rem", y: "-4.8rem" }, 1000, "linear", function () {
             peopleDir.ur.ele.hide();
             peopleDir.ur.ele.gifPause();
             peopleDir.ul.ele.show();
@@ -90,7 +90,7 @@ var roadSence = function (callback) {
                 _self.animeFlag = false;
                 if(callback) callback();
             });
-            s2.transition({ opacity: 1 },0);
+            s2.transition({ opacity: 1 });
         })
     }
 
@@ -102,22 +102,22 @@ var roadSence = function (callback) {
         var s2 = sence[0].children.eq(1);
 
         peopleDir.ul.ele.gifResume();
-        people.transition({ x: "5.8rem", y: "-1.8rem" }, 0, "linear")
-            .transition({ x: "5.65rem", y: "-1.85rem", opacity: 0 },0, function () {
+        people.transition({ x: "5.8rem", y: "-1.8rem" }, 600, "linear")
+            .transition({ x: "5.65rem", y: "-1.85rem", opacity: 0 }, function () {
                 people.css({ x: "4.5rem", y: "-1.8rem" })
-                    .transition({ opacity: 1 },0)
-                    .transition({ x: "3.6rem", y: "-2.3rem" }, 0, "linear")
-                    .transition({ x: "3.5rem", y: "-2.4rem", opacity: 0 },0, function () {
+                    .transition({ opacity: 1 })
+                    .transition({ x: "3.6rem", y: "-2.3rem" }, 700, "linear")
+                    .transition({ x: "3.5rem", y: "-2.4rem", opacity: 0 }, function () {
                         peopleDir.ul.ele.hide();
                         peopleDir.ul.ele.gifPause();
                         peopleDir.ur.ele.show();
                         peopleDir.ur.ele.gifResume();
                         people.css({ x: "3.9rem", y: "-3.5rem" })
-                            .transition({ opacity: 1 },0)
-                            .transition({ x: "4.8rem", y: "-4.7rem" }, 0, "linear", function () {
+                            .transition({ opacity: 1 })
+                            .transition({ x: "4.8rem", y: "-4.7rem" }, 1000, "linear", function () {
                                 peopleDir.ur.ele.gifPause();
-                                s.transition({ opacity: 1 },0);
-                                s2.transition({ opacity: 1 },0);
+                                s.transition({ opacity: 1 });
+                                s2.transition({ opacity: 1 });
                                 box.transition({ y: "11rem" }, trfTime);
                                 people.transition({ y: "-1.7rem" }, trfTime, function () {
                                     _self.animeFlag = false;
@@ -133,15 +133,15 @@ var roadSence = function (callback) {
         _self.animeFlag = true;
         var s = sence[0].children.eq(2);
 
-        s.transition({ y: "-0.47rem" },0, function () {
+        s.transition({ y: "-0.47rem" }, function () {
             peopleDir.ur.ele.gifResume();
         });
-        people.transition({ x: "5.4rem", y: "-2.1rem", delay: 0 }, 0, "linear", function () {
+        people.transition({ x: "5.4rem", y: "-2.1rem", delay: 500 }, 600, "linear", function () {
             peopleDir.ur.ele.gifPause();
-            s.transition({ y: "0.33rem" }, 0);
-            people.transition({ x: "5.4rem", y: "-1.3rem" }, 0, function () {
+            s.transition({ y: "0.33rem" }, 800);
+            people.transition({ x: "5.4rem", y: "-1.3rem" }, 800, function () {
                 peopleDir.ur.ele.gifResume();
-                people.transition({ x: "6.1rem", y: "-1.7rem" }, 0, "linear", function () {
+                people.transition({ x: "6.1rem", y: "-1.7rem" }, 700, "linear", function () {
                     _self.animeFlag = false;
                     if(callback) callback();
                     peopleDir.ur.ele.hide();
@@ -160,17 +160,17 @@ var roadSence = function (callback) {
         var s = sence[0].children.eq(0);
 
         peopleDir.u.ele.gifResume();
-        people.transition({ x: "6.1rem", y: "-2.7rem" }, 0, "linear", function () {
+        people.transition({ x: "6.1rem", y: "-2.7rem" }, 1000, "linear", function () {
             peopleDir.u.ele.hide();
             peopleDir.u.ele.gifPause();
             peopleDir.l.ele.show();
             peopleDir.l.ele.gifResume();
-            people.transition({ x: "4.5rem", y: "-2.8rem" }, 0, "linear")
-                .transition({ x: "4.45rem", y: "-2.8rem", opacity: 0 },0, function () {
+            people.transition({ x: "4.5rem", y: "-2.8rem" }, 1100, "linear")
+                .transition({ x: "4.45rem", y: "-2.8rem", opacity: 0 }, function () {
                     peopleDir.l.ele.hide();
                     peopleDir.l.ele.gifPause();
                     peopleDir.ur.ele.show();
-                    s.transition({ opacity: 1 },0);
+                    s.transition({ opacity: 1 });
                     box.transition({ y: "12.5rem" }, trfTime, function () {
                         _self.animeFlag = false;
                         if(callback) callback();
@@ -184,8 +184,8 @@ var roadSence = function (callback) {
         _self.animeFlag = true;
         peopleDir.ur.ele.gifResume();
         people.css({ x: "4.8rem", y: "-2.5rem" })
-            .transition({ opacity: 1 },0)
-            .transition({ x: "6.1rem", y: "-3.4rem" }, 0, "linear", function () {
+            .transition({ opacity: 1 })
+            .transition({ x: "6.1rem", y: "-3.4rem" }, 1100, "linear", function () {
                 peopleDir.ur.ele.hide();
                 peopleDir.ur.ele.gifPause();
                 peopleDir.ul.ele.show();
@@ -200,11 +200,11 @@ var roadSence = function (callback) {
         var box = sence[0].box;
 
         peopleDir.ul.ele.gifResume();
-        people.transition({ x: "6.05rem", y: "-3.45rem", opacity: 0 },0, function () {
+        people.transition({ x: "6.05rem", y: "-3.45rem", opacity: 0 }, function () {
             box.transition({ y: "15rem" }, trfTime, function () {
                 people.css({ x: "3.6rem", y: "-2.6rem" })
-                    .transition({ opacity: 1 },0)
-                    .transition({ x: "3rem", y: "-3rem" }, 0, "linear", function () {
+                    .transition({ opacity: 1 })
+                    .transition({ x: "3rem", y: "-3rem" }, 800, "linear", function () {
                         peopleDir.ul.ele.hide();
                         peopleDir.ul.ele.gifPause();
                         peopleDir.ur.ele.show();
@@ -223,7 +223,7 @@ var roadSence = function (callback) {
         box.transition({ y: "17rem" }, trfTime);
         people.transition({ x: "3rem", y: "-1rem" }, trfTime, function () {
             peopleDir.ur.ele.gifResume();
-            people.transition({ x: "4.9rem", y: "-2.2rem" }, 0, "linear", function () {
+            people.transition({ x: "4.9rem", y: "-2.2rem" }, 1100, "linear", function () {
                 peopleDir.ur.ele.gifPause();
                 _self.animeFlag = false;
                 if(callback) callback();
@@ -240,25 +240,25 @@ var roadSence = function (callback) {
 
         peopleDir.ur.ele.gifResume();
         stair.css({ y: "-2.2rem" })
-            .transition({ opacity: 1 },0);
-        people.transition({ x: "4.9rem", y: "-2.2rem", opacity: 0 },0, function () {
+            .transition({ opacity: 1 });
+        people.transition({ x: "4.9rem", y: "-2.2rem", opacity: 0 }, function () {
             peopleDir.ur.ele.gifPause();
             peopleDir.ur.ele.hide();
             peopleDir.u.ele.show();
             if(peopleMove) peopleDir.u.ele.gifResume();
-            bgArr[0].transition({ y: "100%" }, 0, "linear");
-            bgArr[1].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear");
-            box1.css({ "z-index": 3 }).transition({ y: "20.5rem" }, 0, "linear");
-            stair.transition({ y: "1.3rem" }, 0, "linear", function () {
+            bgArr[0].transition({ y: "100%" }, 2000, "linear");
+            bgArr[1].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear");
+            box1.css({ "z-index": 3 }).transition({ y: "20.5rem" }, 2000, "linear");
+            stair.transition({ y: "1.3rem" }, 2000, "linear", function () {
                 people.css({ x: "5.9rem", y: "-1rem" })
                     .transition({ opacity: 1 });
-                bgArr[1].transition({ y: "100%" }, 0, "linear");
-                bgArr[2].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear");
-                box1.transition({ y: "26.1rem" }, 0, "linear");
-                stair.css({ "z-index": 2 }).transition({ y: "6.9rem" }, 0, "linear");
+                bgArr[1].transition({ y: "100%" }, 3000, "linear");
+                bgArr[2].show().css({ y: "-100%" }).transition({ y: 0 }, 3000, "linear");
+                box1.transition({ y: "26.1rem" }, 3000, "linear");
+                stair.css({ "z-index": 2 }).transition({ y: "6.9rem" }, 3000, "linear");
                 box2.show().css({ y: "-5.6rem" });
                 _sence2doorInit();
-                box2.transition({ y: "0" }, 0, "linear", function () {
+                box2.transition({ y: "0" }, 3000, "linear", function () {
                     box1.hide();
                     bgArr[0].hide();
                     bgArr[1].hide();
@@ -278,28 +278,28 @@ var roadSence = function (callback) {
         var box3 = roadBox.find(".sence3sp");
 
         peopleDir.ur.ele.gifResume();
-        people.transition({ x: "4.3rem", y: "-3.4rem" }, 0, "linear")
-            .transition({ x: "4.4rem", y: "-3.5rem", opacity: 0 },0, function () {
+        people.transition({ x: "4.3rem", y: "-3.4rem" }, 1000, "linear")
+            .transition({ x: "4.4rem", y: "-3.5rem", opacity: 0 }, function () {
                 box.css({ "z-index": 3 }).transition({ y: "7.25rem" }, trfTime * 2, "linear", function () {
-                    stair.css({ y: "0rem", "z-index": 2, opacity: 0 }).transition({ opacity: 1 },0, function () {
+                    stair.css({ y: "0rem", "z-index": 2, opacity: 0 }).transition({ opacity: 1 }, function () {
                         peopleDir.ur.ele.hide();
                         peopleDir.ur.ele.gifPause();
                         peopleDir.u.ele.show();
                         people.css({ x: "6rem", y: "-0.45rem" })
-                            .transition({ opacity: 1 },0,function(){
+                            .transition({ opacity: 1 },function(){
                                 if(peopleMove) peopleDir.u.ele.gifResume();
                             });
-                        bgArr[0].transition({ y: "100%" }, 0, "linear");
-                        bgArr[7].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear", function () {
-                            bgArr[7].transition({ y: "100%" }, 0, "linear");
-                            bgArr[4].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear");
+                        bgArr[0].transition({ y: "100%" }, 2000, "linear");
+                        bgArr[7].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear", function () {
+                            bgArr[7].transition({ y: "100%" }, 2000, "linear");
+                            bgArr[4].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear");
                         });
-                        box.transition({ y: "15.1rem" }, 0, "linear");
-                        stair.transition({ y: "7.85rem" }, 0, "linear");
+                        box.transition({ y: "15.1rem" }, 4000, "linear");
+                        stair.transition({ y: "7.85rem" }, 4000, "linear");
                         box2.show().css({ y: "-7.85rem" });
                         _sence3doorInit();
-                        box2.transition({ y: "0" }, 0, "linear", function () {
-                            box3.show().css({ opacity: 0 }).transition({ opacity: 1 },0);
+                        box2.transition({ y: "0" }, 4000, "linear", function () {
+                            box3.show().css({ opacity: 0 }).transition({ opacity: 1 });
                             box.hide();
                             bgArr[0].hide();
                             bgArr[7].hide();
@@ -345,18 +345,18 @@ var roadSence = function (callback) {
         peopleDir.ul.ele.show();
         peopleDir.ul.ele.gifResume();
         people.css({ x: "5.9rem", y: "-1rem" })
-            .transition({ x: "3.9rem", y: "-2.2rem" }, 0, "linear", function () {
+            .transition({ x: "3.9rem", y: "-2.2rem" }, 1100, "linear", function () {
                 peopleDir.ul.ele.gifPause();
                 sence2door[0].gifResume();
-                // setTimeout(function () { peopleDir.ul.ele.gifResume() }, 500);
-                people.transition({ x: "3.85rem", y: "-2.25rem", delay: 0, opacity: 0 },0, function () {
+                setTimeout(function () { peopleDir.ul.ele.gifResume() }, 500);
+                people.transition({ x: "3.85rem", y: "-2.25rem", delay: 500, opacity: 0 }, function () {
                     peopleDir.ul.ele.hide();
                     peopleDir.ul.ele.gifPause();
                     peopleDir.ur.ele.show();
                     stair.transition({ y: "8.9rem" }, trfTime);
                     box.transition({ y: "2rem" }, trfTime, function () {
                         people.css({ x: "4.5rem", y: "-1.45rem" })
-                            .transition({ opacity: 1 },0, function () {
+                            .transition({ opacity: 1 }, function () {
                                 _self.animeFlag = false;
                                 if(callback) callback();
                             });
@@ -372,14 +372,14 @@ var roadSence = function (callback) {
         var box = sence[1].box;
 
         peopleDir.ur.ele.gifResume();
-        people.transition({ x: "5.2rem", y: "-1.8rem" }, 0, "linear")
-            .transition({ x: "5.25rem", y: "-1.85rem", opacity: 0 }, 0,function () {
+        people.transition({ x: "5.2rem", y: "-1.8rem" }, 700, "linear")
+            .transition({ x: "5.25rem", y: "-1.85rem", opacity: 0 }, function () {
                 peopleDir.ur.ele.hide();
                 peopleDir.ur.ele.gifPause();
                 peopleDir.ul.ele.show();
                 box.transition({ y: "4rem" }, trfTime, function () {
                     people.css({ x: "4.6rem", y: "-1rem" })
-                        .transition({ opacity: 1 },0);
+                        .transition({ opacity: 1 });
                     _self.animeFlag = false;
                     if(callback) callback();
                 });
@@ -392,16 +392,16 @@ var roadSence = function (callback) {
         var box = sence[1].box;
 
         peopleDir.ul.ele.gifResume();
-        people.transition({ x: "3.9rem", y: "-2rem" }, 0, "linear")
-            .transition({ x: "3.85rem", y: "-2.05rem", opacity: 0 },0, function () {
+        people.transition({ x: "3.9rem", y: "-2rem" }, 700, "linear")
+            .transition({ x: "3.85rem", y: "-2.05rem", opacity: 0 }, function () {
                 peopleDir.ul.ele.hide();
                 peopleDir.ul.ele.gifPause();
                 peopleDir.ur.ele.show();
                 box.transition({ y: "6rem" }, trfTime, function () {
                     people.css({ x: "4.7rem", y: "-0.5rem" })
-                        .transition({ opacity: 1 },0, function () {
+                        .transition({ opacity: 1 }, function () {
                             peopleDir.ur.ele.gifResume();
-                            people.transition({ x: "5.6rem", y: "-1rem" }, 0, "linear", function () {
+                            people.transition({ x: "5.6rem", y: "-1rem" }, 700, "linear", function () {
                                 peopleDir.ur.ele.gifPause();
                                 _self.animeFlag = false;
                                 if(callback) callback();
@@ -419,16 +419,16 @@ var roadSence = function (callback) {
         var s = sence[1].children.eq(5);
 
         peopleDir.ur.ele.gifResume();
-        people.transition({ x: "5.9rem", y: "-1.3rem" },0, function () {
+        people.transition({ x: "5.9rem", y: "-1.3rem" }, function () {
             peopleDir.ur.ele.hide();
             peopleDir.ur.ele.gifPause();
             peopleDir.ul.ele.show();
-            s.transition({ x: "-1.9rem", y: "-1.4rem" }, 0);
-            people.transition({ x: "4rem", y: "-2.7rem" }, 0, function () {
+            s.transition({ x: "-1.9rem", y: "-1.4rem" }, 1300);
+            people.transition({ x: "4rem", y: "-2.7rem" }, 1300, function () {
                 peopleDir.ul.ele.hide();
                 peopleDir.ur.ele.show();
                 peopleDir.ur.ele.gifResume();
-                people.transition({ x: "5.5rem", y: "-3.45rem" }, 0, "linear", function () {
+                people.transition({ x: "5.5rem", y: "-3.45rem" }, 1000, "linear", function () {
                     peopleDir.ur.ele.gifPause();
                     people.transition({ x: "5.5rem", y: "-0.45rem" }, trfTime);
                     box.transition({ y: "9rem" }, trfTime, function () {
@@ -447,16 +447,16 @@ var roadSence = function (callback) {
         var s = sence[1].children.eq(3);
 
         peopleDir.ur.ele.gifResume();
-        people.transition({ x: "5.8rem", y: "-0.8rem" },0, function () {
+        people.transition({ x: "5.8rem", y: "-0.8rem" }, function () {
             peopleDir.ur.ele.hide();
             peopleDir.ur.ele.gifPause();
             peopleDir.ul.ele.show();
-            s.transition({ y: "-1.5rem" }, 0);
-            people.transition({ x: "5.8rem", y: "-2.3rem" }, 0, function () {
+            s.transition({ y: "-1.5rem" }, 1000);
+            people.transition({ x: "5.8rem", y: "-2.3rem" }, 1000, function () {
                 peopleDir.ul.ele.hide();
                 peopleDir.l.ele.show();
                 peopleDir.l.ele.gifResume();
-                people.transition({ x: "4.2rem", y: "-2.5rem" }, 0, "linear", function () {
+                people.transition({ x: "4.2rem", y: "-2.5rem" }, 1000, "linear", function () {
                     peopleDir.l.ele.gifPause();
                     people.transition({ x: "4.2rem", y: "-0.5rem" }, trfTime);
                     box.transition({ y: "11rem" }, trfTime, function () {
@@ -474,27 +474,27 @@ var roadSence = function (callback) {
         var s = sence[1].children.eq(1);
 
         sence2door[1].gifResume();
-        // setTimeout(function () { peopleDir.l.ele.gifResume() }, 500);
-        people.transition({ x: "4.1rem", delay: 0, y: "-0.5rem", opacity: 0 },0, function () {
+        setTimeout(function () { peopleDir.l.ele.gifResume() }, 500);
+        people.transition({ x: "4.1rem", delay: 500, y: "-0.5rem", opacity: 0 }, function () {
             peopleDir.l.ele.hide();
             peopleDir.l.ele.gifPause();
             peopleDir.ur.ele.show();
             people.css({ x: "4.5rem", y: "-1.75rem" })
-                .transition({ opacity: 1 },0, function () {
+                .transition({ opacity: 1 }, function () {
                     peopleDir.ur.ele.gifResume();
-                    people.transition({ x: "5.2rem", y: "-2.2rem" }, 0, "linear", function () {
+                    people.transition({ x: "5.2rem", y: "-2.2rem" }, 700, "linear", function () {
                         peopleDir.ur.ele.gifPause();
-                        s.transition({ opacity: 0 },0, function () {
+                        s.transition({ opacity: 0 }, function () {
                             peopleDir.ur.ele.gifResume();
                         })
-                        people.transition({ x: "5.25rem", y: "-2.25rem", delay: 0, opacity: 0 },0, function () {
+                        people.transition({ x: "5.25rem", y: "-2.25rem", delay: 500, opacity: 0 }, function () {
                             peopleDir.ur.ele.hide();
                             peopleDir.ur.ele.gifPause();
                             peopleDir.ul.ele.show();
                             people.css({ x: "4.8rem", y: "-3.2rem" })
-                                .transition({ opacity: 1 },0, function () {
+                                .transition({ opacity: 1 }, function () {
                                     peopleDir.ul.ele.gifResume();
-                                    people.transition({ x: "4rem", y: "-3.7rem" }, 0, "linear", function () {
+                                    people.transition({ x: "4rem", y: "-3.7rem" }, 700, "linear", function () {
                                         peopleDir.ul.ele.gifPause();
                                         _self.animeFlag = false;
                                         if(callback) callback();
@@ -513,16 +513,16 @@ var roadSence = function (callback) {
         var box = sence[1].box;
 
         sence2door[2].gifResume();
-        // setTimeout(function () { peopleDir.ul.ele.gifResume() }, 500);
-        people.transition({ x: "3.9rem", delay: 0, y: "-3.75rem", opacity: 0 }, 0, function () {
+        setTimeout(function () { peopleDir.ul.ele.gifResume() }, 500);
+        people.transition({ x: "3.9rem", delay: 500, y: "-3.75rem", opacity: 0 }, 500, function () {
             peopleDir.ul.ele.hide();
             peopleDir.ul.ele.gifPause();
             peopleDir.r.ele.show();
             box.transition({ y: "16rem" }, trfTime, function () {
                 people.css({ x: "4.8rem", y: "-0.45rem" })
-                    .transition({ opacity: 1 },0, function () {
+                    .transition({ opacity: 1 }, function () {
                         peopleDir.r.ele.gifResume();
-                        people.transition({ x: "6rem", y: "-0.45rem" }, 0, "linear", function () {
+                        people.transition({ x: "6rem", y: "-0.45rem" }, 1000, "linear", function () {
                             peopleDir.r.ele.hide();
                             peopleDir.r.ele.gifPause();
                             peopleDir.u.ele.show();
@@ -543,19 +543,19 @@ var roadSence = function (callback) {
 
         box1.css({ "z-index": 3 })
         stair.css({ y: "-0.5rem", opacity: 0, "z-index": 2 })
-            .transition({ opacity: 1 },0, function () {
+            .transition({ opacity: 1 }, function () {
                 if(peopleMove) peopleDir.u.ele.gifResume();
-                bgArr[2].transition({ y: "100%" }, 0, "linear");
-                bgArr[3].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear", function () {
-                    bgArr[3].transition({ y: "100%" }, 0, "linear");
-                    bgArr[4].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear");
+                bgArr[2].transition({ y: "100%" }, 2000, "linear");
+                bgArr[3].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear", function () {
+                    bgArr[3].transition({ y: "100%" }, 2000, "linear");
+                    bgArr[4].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear");
                 });
-                box1.transition({ y: "24.35rem" }, 0, "linear");
-                stair.transition({ y: "7.85rem" }, 0, "linear");
+                box1.transition({ y: "24.35rem" }, 4000, "linear");
+                stair.transition({ y: "7.85rem" }, 4000, "linear");
                 box2.show().css({ y: "-8.35rem" });
                 _sence3doorInit();
-                box2.transition({ y: "0" }, 0, "linear", function () {
-                    box3.show().css({ opacity: 0 }).transition({ opacity: 1 },0);
+                box2.transition({ y: "0" }, 4000, "linear", function () {
+                    box3.show().css({ opacity: 0 }).transition({ opacity: 1 });
                     box1.hide();
                     bgArr[2].hide();
                     bgArr[3].hide();
@@ -574,16 +574,16 @@ var roadSence = function (callback) {
         peopleDir.l.ele.show();
         peopleDir.l.ele.gifResume();
         people.css({ x: "6rem", y: "-0.45rem" })
-            .transition({ x: "3.8rem", y: "-0.45rem" }, 0, "linear", function () {
+            .transition({ x: "3.8rem", y: "-0.45rem" }, 1200, "linear", function () {
                 peopleDir.l.ele.gifPause();
                 sence3door[0].gifResume();
-                // setTimeout(function () { peopleDir.l.ele.gifResume() }, 500)
-                people.transition({ x: "3.7rem", delay: 0, y: "-0.45rem", opacity: 0 },0, function () {
+                setTimeout(function () { peopleDir.l.ele.gifResume() }, 500)
+                people.transition({ x: "3.7rem", delay: 500, y: "-0.45rem", opacity: 0 }, function () {
                     peopleDir.l.ele.hide();
                     peopleDir.l.ele.gifPause();
                     peopleDir.ur.ele.show();
                     people.css({ x: "4.2rem", y: "-2.1rem" })
-                        .transition({ opacity: 1 },0, function () {
+                        .transition({ opacity: 1 }, function () {
                             _self.animeFlag = false;
                             if(callback) callback();
                         });
@@ -599,18 +599,18 @@ var roadSence = function (callback) {
         var box2 = roadBox.find(".sence3sp");
 
         peopleDir.ur.ele.gifResume();
-        people.transition({ x: "5.05rem", y: "-2.6rem" }, 0, "linear", function () {
+        people.transition({ x: "5.05rem", y: "-2.6rem" }, 1000, "linear", function () {
             peopleDir.ur.ele.gifPause();
             sence3door[1].gifResume();
-            // setTimeout(function () { peopleDir.ur.ele.gifResume() }, 500);
-            people.transition({ x: "5.1rem", delay: 0, y: "-2.65rem", opacity: 0 },0, function () {
+            setTimeout(function () { peopleDir.ur.ele.gifResume() }, 500);
+            people.transition({ x: "5.1rem", delay: 500, y: "-2.65rem", opacity: 0 }, function () {
                 peopleDir.ur.ele.hide();
                 peopleDir.ur.ele.gifPause();
                 peopleDir.ul.ele.show();
                 people.css({ x: "4.7rem", y: "-4.1rem" })
-                    .transition({ opacity: 1 },0, function () {
+                    .transition({ opacity: 1 }, function () {
                         peopleDir.ul.ele.gifResume();
-                        people.transition({ x: "2.7rem", y: "-5.4rem" }, 0, "linear", function () {
+                        people.transition({ x: "2.7rem", y: "-5.4rem" }, 1400, "linear", function () {
                             peopleDir.ul.ele.gifPause();
                             box.transition({ y: "5rem" }, trfTime, "linear");
                             box2.transition({ y: "5rem" }, trfTime, "linear");
@@ -632,14 +632,14 @@ var roadSence = function (callback) {
         _self.animeFlag = true;
         var s = sence[2].children.eq(4);
 
-        s.transition({ y: "-0.7rem", opacity: 0 },0, function () {
+        s.transition({ y: "-0.7rem", opacity: 0 }, function () {
             peopleDir.ur.ele.gifResume();
-            people.transition({ x: "3.4rem", y: "-0.9rem" }, 0, "linear", function () {
+            people.transition({ x: "3.4rem", y: "-0.9rem" }, 700, "linear", function () {
                 peopleDir.ur.ele.hide();
                 peopleDir.ur.ele.gifPause();
                 peopleDir.r.ele.show();
                 peopleDir.r.ele.gifResume();
-                people.transition({ x: "5.05rem", y: "-0.9rem" }, 0, "linear", function () {
+                people.transition({ x: "5.05rem", y: "-0.9rem" }, 1100, "linear", function () {
                     peopleDir.r.ele.hide();
                     peopleDir.r.ele.gifPause();
                     peopleDir.u.ele.show();
@@ -659,15 +659,15 @@ var roadSence = function (callback) {
         var wheel = box.find(".wheel");
 
         peopleDir.u.ele.gifResume();
-        people.transition({ x: "5.05rem", y: "-1rem", opacity: 0 },0, function () {
+        people.transition({ x: "5.05rem", y: "-1rem", opacity: 0 }, function () {
             peopleDir.u.ele.hide();
             peopleDir.u.ele.gifPause();
             peopleDir.l.ele.show();
             wheelBox.removeClass("zindex2").css({ "z-index": 2 })
-                .transition({ rotate: "-180deg" }, 0, "linear", function () {
+                .transition({ rotate: "-180deg" }, 2000, "linear", function () {
                     peopleDir.l.ele.gifResume();
                     people.css({ x: "4.5rem", y: "-4rem" })
-                        .transition({ x: "4.2rem", y: "-4rem", opacity: 1 },0, function () {
+                        .transition({ x: "4.2rem", y: "-4rem", opacity: 1 }, function () {
                             peopleDir.l.ele.gifPause();
                             box.transition({ y: "8.5rem" }, trfTime, "linear");
                             box2.transition({ y: "8.5rem" }, trfTime, "linear");
@@ -678,7 +678,7 @@ var roadSence = function (callback) {
                             });
                         });
                 });
-            wheel.transition({ rotate: "180deg" }, 0, "linear");
+            wheel.transition({ rotate: "180deg" }, 2000, "linear");
         });
     }
 
@@ -687,15 +687,15 @@ var roadSence = function (callback) {
         _self.animeFlag = true;
 
         sence3door[2].gifResume();
-        // setTimeout(function () { peopleDir.l.ele.gifResume() }, 500);
-        people.transition({ x: "4.1rem", delay: 0, y: "-0.5rem", opacity: 0 },0, function () {
+        setTimeout(function () { peopleDir.l.ele.gifResume() }, 500);
+        people.transition({ x: "4.1rem", delay: 500, y: "-0.5rem", opacity: 0 }, function () {
             peopleDir.l.ele.hide();
             peopleDir.l.ele.gifPause();
             peopleDir.r.ele.show();
             people.css({ x: "2.8rem", y: "-2.3rem" })
-                .transition({ opacity: 1 },0, function () {
+                .transition({ opacity: 1 }, function () {
                     peopleDir.r.ele.gifResume();
-                    people.transition({ x: "4.2rem", y: "-2.3rem" }, 0, "linear", function () {
+                    people.transition({ x: "4.2rem", y: "-2.3rem" }, 1100, "linear", function () {
                         peopleDir.r.ele.gifPause();
                         _self.animeFlag = false;
                         if(callback) callback();
@@ -710,31 +710,31 @@ var roadSence = function (callback) {
         var box1 = sence[2].box;
         var box2 = sence[3].box;
         sence3door[3].gifResume();
-        // setTimeout(function () { peopleDir.r.ele.gifResume() }, 500);
-        people.transition({ x: "4.3rem", delay: 0, y: "-2.3rem", opacity: 0 },0, function () {
+        setTimeout(function () { peopleDir.r.ele.gifResume() }, 500);
+        people.transition({ x: "4.3rem", delay: 500, y: "-2.3rem", opacity: 0 }, function () {
             peopleDir.r.ele.gifPause();
             box1.css({ "z-index": 3 })
-            stair.css({ y: "-4rem", "z-index": 2, opacity: 0 }).transition({ opacity: 1 },0, function () {
+            stair.css({ y: "-4rem", "z-index": 2, opacity: 0 }).transition({ opacity: 1 }, function () {
                 stair.transition({ y: 0 }, trfTime, "linear");
                 box1.transition({ y: "12.5rem" }, trfTime, "linear", function () {
                     peopleDir.r.ele.hide();
                     peopleDir.u.ele.show();
                     people.css({ x: "5.9rem", y: "-0.7rem" })
-                        .transition({ opacity: 1 },0,function(){
+                        .transition({ opacity: 1 },function(){
                             if(peopleMove) peopleDir.u.ele.gifResume();
                         });
-                    bgArr[4].transition({ y: "100%" }, 0, "linear");
-                    bgArr[5].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear", function () {
-                        bgArr[5].transition({ y: "100%" }, 0, "linear");
-                        bgArr[6].show().css({ y: "-100%" }).transition({ y: 0 }, 0, "linear");
+                    bgArr[4].transition({ y: "100%" }, 2000, "linear");
+                    bgArr[5].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear", function () {
+                        bgArr[5].transition({ y: "100%" }, 2000, "linear");
+                        bgArr[6].show().css({ y: "-100%" }).transition({ y: 0 }, 2000, "linear");
                     });
-                    box1.transition({ y: "20.04rem" }, 0, "linear");
-                    stair.transition({ y: "7.54rem" }, 0, "linear");
-                    box2.show().css({ y: "-7.54rem" }).transition({ y: "0" }, 0, "linear", function () {
+                    box1.transition({ y: "20.04rem" }, 4000, "linear");
+                    stair.transition({ y: "7.54rem" }, 4000, "linear");
+                    box2.show().css({ y: "-7.54rem" }).transition({ y: "0" }, 4000, "linear", function () {
                         box1.hide();
                         bgArr[4].hide();
                         bgArr[5].hide();
-                        stair.transition({ opacity: 0 },0);
+                        stair.transition({ opacity: 0 });
                         _self.animeFlag = false;
                         if(peopleMove) peopleDir.u.ele.gifPause();
                         if (callback) callback();
@@ -758,23 +758,23 @@ var roadSence = function (callback) {
         peopleDir.l.ele.show();
         peopleDir.l.ele.gifResume();
         people.css({ x: "5.9rem", y: "-0.7rem" })
-            .transition({ x: "3.1rem", y: "-0.7rem" }, 0, "linear", function () {
+            .transition({ x: "3.1rem", y: "-0.7rem" }, 1200, "linear", function () {
                 peopleDir.l.ele.hide();
                 peopleDir.l.ele.gifPause();
                 peopleDir.u.ele.show();
                 peopleDir.u.ele.gifResume();
-                people.transition({ x: "3.1rem", y: "-1.4rem" }, 0, "linear", function () {
+                people.transition({ x: "3.1rem", y: "-1.4rem" }, 500, "linear", function () {
                     peopleDir.u.ele.hide();
                     peopleDir.u.ele.gifPause();
                     peopleDir.ur.ele.show();
                     peopleDir.ur.ele.gifResume();
-                    people.transition({ x: "4.8rem", y: "-3.3rem" }, 0, "linear", function () {
+                    people.transition({ x: "4.8rem", y: "-3.3rem" }, 1500, "linear", function () {
                         peopleDir.ur.ele.gifPause();
                         box.transition({ y: "3rem" }, trfTime, "linear");
                         people.transition({ x: "4.8rem", y: "-0.3rem" }, trfTime, "linear", function () {
-                            m1.transition({ opacity: 1 },0);
-                            m2.transition({ opacity: 1 },0);
-                            m3.transition({ opacity: 1 },0);
+                            m1.transition({ opacity: 1 });
+                            m2.transition({ opacity: 1 });
+                            m3.transition({ opacity: 1 });
                             _self.animeFlag = false;
                             if (callback) callback();
                         });
@@ -797,28 +797,28 @@ var roadSence = function (callback) {
         m1.hide();
         m2.hide();
         m3.hide();
-        d1.transition({ y: "-1rem", opacity: 0 }, 0);
-        d2.transition({ y: "-1rem", opacity: 0, delay: 0 }, 0);
-        d3.transition({ y: "-1rem", opacity: 0, delay: 0 }, 0, function () {
+        d1.transition({ y: "-1rem", opacity: 0 }, 800);
+        d2.transition({ y: "-1rem", opacity: 0, delay: 500 }, 800);
+        d3.transition({ y: "-1rem", opacity: 0, delay: 1000 }, 800, function () {
             peopleDir.ur.ele.gifResume();
-            people.transition({ x: "5.3rem", y: "-1rem" }, 0, "linear", function () {
+            people.transition({ x: "5.3rem", y: "-1rem" }, 600, "linear", function () {
                 peopleDir.ur.ele.hide();
                 peopleDir.ur.ele.gifPause();
                 peopleDir.ul.ele.show();
                 peopleDir.ul.ele.gifResume();
-                people.transition({ x: "3rem", y: "-2.5rem" }, 0, "linear", function () {
+                people.transition({ x: "3rem", y: "-2.5rem" }, 1700, "linear", function () {
                     peopleDir.ul.ele.hide();
                     peopleDir.ul.ele.gifPause();
                     peopleDir.ur.ele.show();
                     peopleDir.ur.ele.gifResume();
-                    people.transition({ x: "5.6rem", y: "-4rem" }, 0, "linear", function () {
+                    people.transition({ x: "5.6rem", y: "-4rem" }, 1700, "linear", function () {
                         peopleDir.ur.ele.hide();
                         peopleDir.ur.ele.gifPause();
                         peopleDir.u.ele.show();
                         box.transition({ y: "6rem" }, trfTime, "linear");
                         people.transition({ x: "5.6rem", y: "-1rem" }, trfTime, "linear", function () {
                             peopleDir.u.ele.gifResume();
-                            people.transition({ x: "5.6rem", y: "-1.2rem", opacity: 0 },0, function () {
+                            people.transition({ x: "5.6rem", y: "-1.2rem", opacity: 0 }, function () {
                                 peopleDir.u.ele.gifPause();
                                 _self.animeFlag = false;
                                 _self.sence4step3(function () {

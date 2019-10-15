@@ -3,7 +3,7 @@ var API = new importAPI();
 function importAPI () {
 	var _self = this;
 
-	var requestDomain = "https://wechat.dhteam.net/actapi/api/SysConfig/AddUnionPay";
+	var requestDomain = "https://anquan2019api.energytrust.com.cn/admin/ajax/company/getYINLIAN.ashx?action=AddYINLIAN";
 	var loadBox=$('aside.loadBox');
 
 	function _Ajax(opts){
